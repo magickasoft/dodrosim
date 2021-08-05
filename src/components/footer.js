@@ -1,6 +1,6 @@
 import React from 'react';
 import SC from 'styled-components';
-import Link from 'next/link';
+import {Logo} from './logo';
 
 import { device } from '../theme';
 
@@ -19,6 +19,6 @@ const Grid = SC.div`
 
 export const Footer = () => (
   <Container>
-    d sdf sdf
+    <Logo signColor="#777777" color="#777777" />
   </Container>
 );
