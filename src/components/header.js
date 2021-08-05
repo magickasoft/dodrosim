@@ -6,6 +6,10 @@ import {Logo} from './logo';
 import { device } from '../theme';
 
 const Container = SC.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: #fff;
   display: flex;
   align-items: center;
