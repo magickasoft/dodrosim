@@ -1,6 +1,5 @@
 import Head from "next/head";
 import SC from 'styled-components';
-import useScrollTop from "../../hooks/useScrollTop";
 
 const Content = SC.div`
   color: #000;
@@ -13,9 +12,6 @@ const Content = SC.div`
 `;
 
 export default function contacts() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useScrollTop();
-
   return (
     <div className="wrapper">
       <Head>
