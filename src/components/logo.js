@@ -9,7 +9,6 @@ const Icon = SC.svg`
 `;
 
 const Label = SC.span`
-  margin-right: 7px;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
