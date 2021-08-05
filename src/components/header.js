@@ -1,5 +1,6 @@
 import React from 'react';
 import SC from 'styled-components';
+import Link from "next/link";
 import {Logo} from './logo';
 
 import { device } from '../theme';
@@ -46,6 +47,12 @@ export const Header = () => (
       <Label>
         Дирекция по обеспечению деятельности ФАУГИ
       </Label>
+    </Content>
+    <Content>
+      <Link href="/services">Услуги</Link>
+      <Link href="/objects">Объекты</Link>
+      <Link href="/about">Об учреждении</Link>
+      <Link href="/contacts">Контакты</Link>
     </Content>
   </Container>
 );
