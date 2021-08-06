@@ -25,16 +25,15 @@ const Line2 = SC.div`
   border-top-color: #777777;
   border-top-width: 1px;
   border-top-style: solid;
-  padding-left: 7px;
   display: flex;
   align-items: center;
-  height: 60px;
-  @media ${maxDevice.mobileL} {
-    margin-bottom: 30px;
-  }
+  justify-content: center;
   @media ${minDevice.tablet} {
     display: none;
   }
+  @media ${maxDevice.mobileL} {
+    justify-content: flex-start;
+    padding-left: 30px;
 `;
 
 const List = SC.div`
@@ -42,9 +41,22 @@ const List = SC.div`
     display: none;
   }
 `;
+
 const Menu = SC.div`
   @media ${minDevice.tablet} {
     display: none;
+  }
+`;
+
+const Content = SC.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media ${minDevice.mobileL} {
+    flex-direction: row;
+  }
+  a:last-child {
+    margin: 0;
   }
 `;
 
@@ -72,9 +84,9 @@ export const Header = () => {
       </Line1>
       {isOpen && (
         <Line2>
-          <div>
+          <Content>
             {items}
-          </div>
+          </Content>
         </Line2>
       )}
     </Container>

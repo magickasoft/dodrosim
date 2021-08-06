@@ -14,7 +14,7 @@ const Item = SC.a`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #008E5B;
-  margin: 0 20px 0 0;
+  margin: 0 13px 0 0;
   &:hover {
     color: #333E66;
   }
