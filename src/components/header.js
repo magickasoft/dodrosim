@@ -44,6 +44,7 @@ const Label = SC.div`
 `;
 
 const Item = SC.a`
+  position: relative;
   padding: 22px 0;
   font-style: normal;
   font-weight: bold;
@@ -56,9 +57,17 @@ const Item = SC.a`
   margin: 0 20px 0 0;
   &:hover {
     color: #333E66;
-    border-bottom: #333E66;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+  }
+  &:hover:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    border-radius: 1px 1px 0 0;
+    background-color: #333E66;
   }
 `;
 
