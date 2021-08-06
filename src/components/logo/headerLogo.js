@@ -1,6 +1,7 @@
 import React from 'react';
 import SC from 'styled-components';
 import {Logo} from './logo';
+import { maxDevice, minDevice } from '../../theme';
 
 const Container = SC.div`
   display: flex;
@@ -14,6 +15,9 @@ const Divider = SC.div`
   width: 1px;
   height: 36px;
   margin: 0 15px;
+  @media ${maxDevice.laptop} {
+    display: none;
+  }
 `;
 
 const Label = SC.div`
@@ -25,6 +29,9 @@ const Label = SC.div`
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #777777;
+  @media ${maxDevice.laptop} {
+    display: none;
+  }
 `;
 
 export const HeaderLogo = () => (
