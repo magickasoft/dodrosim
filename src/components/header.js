@@ -1,7 +1,7 @@
 import React from 'react';
 import SC from 'styled-components';
-import Link from "next/link";
 import {Logo} from './logo';
+import {NavLink} from './navLink';
 
 import { device } from '../theme';
 
@@ -43,34 +43,6 @@ const Label = SC.div`
   color: #777777;
 `;
 
-const Item = SC.a`
-  position: relative;
-  padding: 22px 0;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: right;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #008E5B;
-  margin: 0 20px 0 0;
-  &:hover {
-    color: #333E66;
-  }
-  &:hover:after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    border-radius: 1px 1px 0 0;
-    background-color: #333E66;
-  }
-`;
-
 export const Header = () => (
   <Container>
     <Content>
@@ -81,18 +53,10 @@ export const Header = () => (
       </Label>
     </Content>
     <Content>
-      <Link href="/services" passHref>
-        <Item>Услуги</Item>
-      </Link>
-      <Link href="/objects" passHref>
-        <Item>Объекты</Item>
-      </Link>
-      <Link href="/about" passHref>
-        <Item >Об учреждении</Item>
-      </Link>
-      <Link href="/contacts" passHref>
-        <Item>Контакты</Item>
-      </Link>
+      <NavLink href="/services" name="Услуги" />
+      <NavLink href="/objects" name="Объекты" />
+      <NavLink href="/about" name="Об учреждении" />
+      <NavLink href="/contacts" name="Контакты" />
     </Content>
   </Container>
 );
