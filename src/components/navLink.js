@@ -1,7 +1,7 @@
 import React from 'react';
 import SC from 'styled-components';
 import Link from "next/link";
-import { device } from '../theme';
+import { minDevice } from '../theme';
 
 const Item = SC.a`
   position: relative;
@@ -18,7 +18,7 @@ const Item = SC.a`
   &:hover {
     color: #333E66;
   }
-  @media ${device.tablet} {
+  @media ${minDevice.tablet} {
     &:hover:after {
       content: "";
       position: absolute;

@@ -2,7 +2,7 @@ import React from 'react';
 import SC from 'styled-components';
 import {Logo} from './logo';
 
-import { device } from '../theme';
+import { maxDevice } from '../theme';
 import Link from 'next/link';
 
 const Container = SC.footer`
@@ -11,7 +11,7 @@ const Container = SC.footer`
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  @media ${device.laptop} {}
+  @media ${maxDevice.laptop} {}
 `;
 
 const Contacts = SC.div``;
