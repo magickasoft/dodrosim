@@ -3,7 +3,7 @@ import SC from 'styled-components';
 import {Logo} from './logo';
 import {NavLink} from './navLink';
 
-import { device } from '../theme';
+import { device, size } from '../theme';
 
 const Container = SC.header`
   position: fixed;
@@ -30,6 +30,9 @@ const Divider = SC.div`
   width: 1px;
   height: 36px;
   margin: 0 15px;
+  @media (max-width: ${size.laptop}) {
+    display: none;
+  }
 `;
 
 const Label = SC.div`
@@ -41,6 +44,9 @@ const Label = SC.div`
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #777777;
+  @media (max-width: ${size.laptop}) {
+    display: none;
+  }
 `;
 
 export const Header = () => (
