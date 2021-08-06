@@ -1,6 +1,7 @@
 import React from 'react';
 import SC from 'styled-components';
 import Link from "next/link";
+import { device } from '../theme';
 
 const Item = SC.a`
   position: relative;
@@ -17,16 +18,18 @@ const Item = SC.a`
   &:hover {
     color: #333E66;
   }
-  &:hover:after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    border-radius: 1px 1px 0 0;
-    background-color: #333E66;
+  @media ${device.tablet} {
+    &:hover:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      border-radius: 1px 1px 0 0;
+      background-color: #333E66;
+    }
   }
 `;
 
