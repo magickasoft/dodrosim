@@ -19,6 +19,9 @@ const Label = SC.span`
 const Content = SC.a`
   display: flex;
   align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Logo = ({signColor = '#008E5B', color = '#000'}) => (
