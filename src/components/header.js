@@ -26,9 +26,10 @@ const menu = [
   { name: 'Контакты', href: '/contacts' },
 ];
 
-
 export const Header = () => {
+  const [active, setActive] = React.useState(null);
   const items = menu.map(i => <NavLink key={i.name} {...i} />);
+
   return (
     <Container>
       <Line>

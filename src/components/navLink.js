@@ -1,5 +1,5 @@
 import React from 'react';
-import SC from 'styled-components';
+import SC, { css } from 'styled-components';
 import Link from "next/link";
 import { minDevice } from '../theme';
 
@@ -19,6 +19,20 @@ const Item = SC.a`
     color: #333E66;
   }
   @media ${minDevice.tablet} {
+    ${({ active }) => active  && css`
+      color: #333E66;
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        border-radius: 1px 1px 0 0;
+        background-color: #333E66;
+      }
+    `}
     &:hover:after {
       content: "";
       position: absolute;
@@ -33,8 +47,8 @@ const Item = SC.a`
   }
 `;
 
-export const NavLink = ({ name, ...props }) => (
+export const NavLink = ({ name, active, ...props }) => (
   <Link {...props} passHref>
-    <Item>{name}</Item>
+    <Item active={active}>{name}</Item>
   </Link>
 );
