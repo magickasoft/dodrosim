@@ -1,5 +1,6 @@
 import React from 'react';
 import SC from 'styled-components';
+import { Rotate } from 'hamburger-react';
 import {HeaderLogo} from './logo';
 import {Icon} from './icon';
 import {NavLink} from './navLink';
@@ -78,8 +79,8 @@ export const Header = () => {
         <List>
           {items}
         </List>
-        <Menu onClick={() => setOpen(!isOpen)}>
-          <Icon name={isOpen ? 'close' : 'burger'} size={24} />
+        <Menu>
+          <Rotate color="#333E66" size={24} toggled={isOpen} toggle={setOpen} />
         </Menu>
       </Line1>
       {isOpen && (
