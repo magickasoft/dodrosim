@@ -47,8 +47,8 @@ const Item = SC.a`
   }
 `;
 
-export const NavLink = ({ name, active, ...props }) => (
+export const NavLink = ({ name, active, onClick, ...props }) => (
   <Link {...props} passHref>
-    <Item active={active}>{name}</Item>
+    <Item onClick={onClick} active={active}>{name}</Item>
   </Link>
 );

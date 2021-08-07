@@ -2,7 +2,6 @@ import React from 'react';
 import SC from 'styled-components';
 import { Rotate } from 'hamburger-react';
 import {HeaderLogo} from './logo';
-import {Icon} from './icon';
 import {NavLink} from './navLink';
 import { maxDevice, minDevice } from '../theme';
 
@@ -70,7 +69,10 @@ const menu = [
 
 export const Header = () => {
   const [isOpen, setOpen] = React.useState(false);
-  const items = menu.map(i => <NavLink key={i.name} {...i} />);
+
+  const items = React.useMemo(() => {
+    return menu.map(i => <NavLink key={i.name} {...i} onClick={() => setOpen(!isOpen)} />);
+  }, [isOpen]);
 
   return (
     <Container>
