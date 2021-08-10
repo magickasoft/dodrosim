@@ -1,15 +1,70 @@
 import Head from "next/head";
 import SC from 'styled-components';
+import { maxDevice, minDevice } from '../../theme';
+import React from 'react';
+
+const Container = SC.div`
+  margin: 120px 140px 60px 140px;
+  @media ${maxDevice.tablet} {
+    margin: 120px 30px 60px 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    margin: 90px 30px 50px 30px;
+  }
+`;
+
+const Header = SC.div`
+  white-space: pre-line;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  @media ${maxDevice.mobileL} {
+    font-size: 30px;
+    line-height: 36px;
+  }
+`;
 
 const Content = SC.div`
-  color: #000;
-  background: #fff;
-  height: 100vh;
-  text-align: center;
+  margin: 40px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @media ${maxDevice.mobileL} {
+    flex-direction: column;
+  }
 `;
+
+const Block = SC.div`
+  width: 600px;
+`;
+
+const InfoContainer = SC.div`
+  margin: 15px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+`;
+
+const InfoLabel = SC.div`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #777777;
+`;
+
+const Info = ({ label, children }) => (
+  <InfoContainer>
+    {label && <InfoLabel>{label}</InfoLabel>}
+    {children}
+  </InfoContainer>
+);
 
 export default function contacts() {
   return (
@@ -26,9 +81,31 @@ export default function contacts() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Контакты" />
       </Head>
-      <Content>
-        Контакты
-      </Content>
+      <Container>
+        <Header>Контакты</Header>
+        <Content>
+          <Block>
+            <Info label="Телефоны">
+              <div>+7 (495) 361-45-21</div>
+              <div>+7 (495) 361-45-18</div>
+            </Info>
+            <Info label="Факс">
+              <div>+7 (495) 361-45-21</div>
+            </Info>
+            <Info label="Электронная почта">
+              <a href='mailto:info@dodrosim.ru'>info@dodrosim.ru</a>
+            </Info>
+          </Block>
+          <Block>
+            <Info label="Адрес">
+              <div>111024, Москва, проезд Завода Серп  и Молот, д. 5, стр.</div>
+            </Info>
+            <Info label="Режим работы">
+              <div>Пн — Пт с 9:00 до 18:00</div>
+            </Info>
+          </Block>
+        </Content>
+      </Container>
     </div>
   );
 }
