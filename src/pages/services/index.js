@@ -1,15 +1,9 @@
 import Head from "next/head";
 import SC from 'styled-components';
+import {Page} from '../../components';
+import React from 'react';
 
-const Content = SC.div`
-  color: #000;
-  background: #fff;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const Content = SC.div``;
 
 export default function services() {
   return (
@@ -26,9 +20,9 @@ export default function services() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Услуги" />
       </Head>
-      <Content>
-        Услуги
-      </Content>
+      <Page label="Услуги">
+        ---
+      </Page>
     </div>
   );
 }

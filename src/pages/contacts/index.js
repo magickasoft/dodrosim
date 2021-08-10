@@ -130,7 +130,7 @@ export default function contacts() {
           </Block>
         </Content>
         <LoadScript
-          googleMapsApiKey="AIzaSyAVvL9VgqtHwNFsGFRbezgHulbiqv_TZdg"
+          googleMapsApiKey="AIzaSyBOlmI7ovA7rXy7xc5kR2ET88lbuoRzehw"
         >
           <GoogleMap
             mapContainerStyle={{

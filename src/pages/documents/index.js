@@ -1,44 +1,10 @@
+import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
 import { maxDevice } from '../../theme';
-import React from 'react';
+import {Page} from '../../components';
 
-const Container = SC.div`
-  margin: 120px 140px 60px 140px;
-  @media ${maxDevice.tablet} {
-    margin: 120px 30px 60px 30px;
-  }
-  @media ${maxDevice.mobileL} {
-    margin: 90px 30px 50px 30px;
-  }
-`;
-
-const Header = SC.div`
-  white-space: pre-line;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 48px;
-  color: #000000;
-  @media ${maxDevice.mobileL} {
-    font-size: 30px;
-    line-height: 36px;
-  }
-`;
-
-const Text = SC.div`
-  margin-top: 40px;
-  white-space: pre-line;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 20px;
-  color: #777777;
-  max-width: 760px;
-  @media ${maxDevice.mobileL} {
-    margin-top: 30px;
-  }
-`;
+const Content = SC.div``;
 
 export default function documents() {
   return (
