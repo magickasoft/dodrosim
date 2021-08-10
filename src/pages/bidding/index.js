@@ -1,14 +1,43 @@
 import Head from "next/head";
 import SC from 'styled-components';
+import { maxDevice } from '../../theme';
+import React from 'react';
 
-const Content = SC.div`
-  color: #000;
-  background: #fff;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Container = SC.div`
+  margin: 120px 140px 60px 140px;
+  @media ${maxDevice.tablet} {
+    margin: 120px 30px 60px 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    margin: 90px 30px 50px 30px;
+  }
+`;
+
+const Header = SC.div`
+  white-space: pre-line;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  @media ${maxDevice.mobileL} {
+    font-size: 30px;
+    line-height: 36px;
+  }
+`;
+
+const Text = SC.div`
+  margin-top: 40px;
+  white-space: pre-line;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #777777;
+  max-width: 760px;
+  @media ${maxDevice.mobileL} {
+    margin-top: 30px;
+  }
 `;
 
 export default function bidding() {
@@ -26,9 +55,12 @@ export default function bidding() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Торги" />
       </Head>
-      <Content>
-        Торги
-      </Content>
+      <Container>
+        <Header>Торги</Header>
+        <Text>
+          Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом» (ОГРН 1187746840423,  ИНН 7722467407), на основании распоряжения Правительства Российской Федерации от 24.01.2018 № 75-р было преобразовано из Федерального государственного унитарного предприятия «Авторемонтный центр Мингосимущества России» (ОГРН 1027739280470, ИНН 7722011854).
+        </Text>
+      </Container>
     </div>
   );
 }
