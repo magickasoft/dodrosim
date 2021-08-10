@@ -2,7 +2,7 @@ import React from 'react';
 import SC from 'styled-components';
 import {Logo} from './logo';
 
-import { maxDevice } from '../theme';
+import { maxDevice, minDevice } from '../theme';
 import Link from 'next/link';
 
 const Container = SC.footer`
@@ -11,13 +11,29 @@ const Container = SC.footer`
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  @media ${maxDevice.laptop} {}
+  @media ${maxDevice.tablet} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
-const Contacts = SC.div``;
+const Contacts = SC.div`
+  margin: 0px 20px 0px 20px;
+  @media (min-width: 490px) {
+    width: 443px;
+  }
+`;
+
 const Links = SC.div`
   display: flex;
   flex-direction: row;
+  @media ${minDevice.tablet} AND ${maxDevice.laptop} {
+    flex-direction: column;
+  }
+  @media ${maxDevice.mobileS} {
+    flex-direction: column;
+    align-self: flex-start;
+  }
 `;
 
 const Copyright = SC.div`
@@ -33,6 +49,12 @@ const Content = SC.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  @media ${minDevice.tablet} AND ${maxDevice.laptop} {
+    flex-direction: column;
+  }
+  @media ${maxDevice.mobileL} {
+    flex-direction: column;
+  }
 `;
 
 const Block = SC.div`
