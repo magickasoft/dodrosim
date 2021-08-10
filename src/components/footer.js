@@ -171,7 +171,7 @@ export const Footer = () => (
           </Link>
         </Text>
         <Text>
-          <Link href="/contacts" passHref>
+          <Link href="/documents" passHref>
             <a>Документы</a>
           </Link>
         </Text>
@@ -191,7 +191,7 @@ export const Footer = () => (
           </Link>
         </Text>
         <Text>
-          <Link href="/contacts" passHref>
+          <Link href="/vacancies" passHref>
             <a>Вакансии</a>
           </Link>
         </Text>
