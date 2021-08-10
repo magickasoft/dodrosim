@@ -32,7 +32,7 @@ export default function objects() {
         <meta name="description" content="Объекты" />
       </Head>
       <Content>
-        <Iframe src="http://45.9.25.183/" width="100%" height="100%" align="left">
+        <Iframe src="https://dodimpro.ru/" width="100%" height="100%" align="left">
           Ваш браузер не поддерживает плавающие фреймы!
         </Iframe>
       </Content>
