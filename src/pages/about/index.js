@@ -1,15 +1,10 @@
+import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
+import {Page} from '../../components';
+import { maxDevice } from '../../theme';
 
-const Content = SC.div`
-  color: #000;
-  background: #fff;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const Content = SC.div``;
 
 export default function about() {
   return (
@@ -26,9 +21,9 @@ export default function about() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Об учреждении" />
       </Head>
-      <Content>
-        Об учреждении
-      </Content>
+      <Page label="Об учреждении">
+        ---
+      </Page>
     </div>
   );
 }

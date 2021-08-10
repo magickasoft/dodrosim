@@ -1,18 +1,10 @@
+import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
 import { GoogleMap, LoadScript, InfoWindow } from '@react-google-maps/api';
 import { maxDevice } from '../../theme';
-import React from 'react';
+import {Page} from '../../components';
 
-const Container = SC.div`
-  margin: 120px 140px 60px 140px;
-  @media ${maxDevice.tablet} {
-    margin: 120px 30px 60px 30px;
-  }
-  @media ${maxDevice.mobileL} {
-    margin: 90px 30px 50px 30px;
-  }
-`;
 const InfoHeader = SC.div`
   font-style: normal;
   font-weight: bold;
@@ -27,19 +19,6 @@ const InfoText = SC.div`
   font-size: 13px;
   line-height: 18px;
   color: #000000;
-`;
-
-const Header = SC.div`
-  white-space: pre-line;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 48px;
-  color: #000000;
-  @media ${maxDevice.mobileL} {
-    font-size: 30px;
-    line-height: 36px;
-  }
 `;
 
 const Content = SC.div`
@@ -105,8 +84,7 @@ export default function contacts() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Контакты" />
       </Head>
-      <Container>
-        <Header>Контакты</Header>
+      <Page label="Контакты">
         <Content>
           <Block>
             <Info label="Телефоны">
@@ -148,7 +126,7 @@ export default function contacts() {
             </InfoWindow>
           </GoogleMap>
         </LoadScript>
-      </Container>
+      </Page>
     </div>
   );
 }
