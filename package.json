@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.2.0",
     "color": "^4.0.1",
     "hamburger-react": "^2.4.1",
     "lodash": "^4.17.21",

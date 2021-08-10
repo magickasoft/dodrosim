@@ -1,5 +1,6 @@
 import Head from "next/head";
 import SC from 'styled-components';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { maxDevice, minDevice } from '../../theme';
 import React from 'react';
 
