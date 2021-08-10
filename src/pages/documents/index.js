@@ -1,10 +1,50 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
-import { maxDevice } from '../../theme';
-import {Page} from '../../components';
+import {Page, Card} from '../../components';
 
-const Content = SC.div``;
+const Content = SC.div`
+  margin: 45px 0;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Header = SC.div`
+  margin: 25px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+`;
+
+const about = [
+  { label: 'Приказ № 352 от 05.12.2019 г. О директоре ФГБУ «ДОД Росимущества»', href: '/vacancies', type: 'document' },
+  { label: 'Документы об учреждении Распоряжение Росимущества №573-р от 14.08.2018 г. Устав ФГБУ «ДОД Ро…', href: '/vacancies', type: 'document' },
+  { label: 'Документы об учреждении Приказ №253 от 06.08.2018 г. Об определении перечня особо ценного движимого…', href: '/vacancies', type: 'document' },
+  { label: 'Документы об учрежденииПриказ №263 от 10.08.2018 г. Об утверждении порядка составления и утверждения плана…', href: '/vacancies', type: 'document' },
+  { label: 'Документы об учрежденииПриказ №264 от 10.08.2018 г. Об утверждении Порядка определения нормативных затрат…', href: '/vacancies', type: 'document' },
+  { label: 'Документы об учрежденииПриказ №481 от 19.12.2018 г. Об утверждении Примерного положения об оплате…', href: '/vacancies', type: 'document' },
+  { label: 'Документы об учреждении Распоряжение №700-р от 16.10.2018 г. Об утверждении Положения о закупке…', href: '/vacancies', type: 'document' },
+];
+
+const serf = [
+  { label: 'Лицензия МЧС 2010 год', href: '/vacancies', type: 'document' },
+  { label: 'Лицензия МЧС 2012 год', href: '/vacancies', type: 'document' },
+  { label: 'СРО_НОВ', href: '/vacancies', type: 'document' },
+  { label: 'Сертификат исо 9001-2008', href: '/vacancies', type: 'document' },
+];
+
+const statements = [
+  { label: 'Сводная ведомость результатов проведения специальной оценки условий труда', href: '/vacancies', type: 'document' },
+  { label: 'Сводная ведомость результатов проведения специальной оценки условий труда 2', href: '/vacancies', type: 'document' },
+  { label: 'Сводная ведомость результатов проведения специальной оценки условий труда 3', href: '/vacancies', type: 'document' },
+];
+
+const info = [
+  { label: 'Справка о средней заработной плате руководителя, его заместителей и главного бухгалтера ФГБУ «ДОД Росимущ…', href: '/vacancies', type: 'document' },
+  { label: 'Документы об учреждении Государственное задание ФГБУ «ДОД Росимущества» на 2019 год', href: '/vacancies', type: 'document' },
+];
 
 export default function documents() {
   return (
@@ -25,7 +65,22 @@ export default function documents() {
         label="Документы"
         text=" Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом» (ОГРН 1187746840423,  ИНН 7722467407), на основании распоряжения Правительства Российской Федерации от 24.01.2018 № 75-р было преобразовано из Федерального государственного унитарного предприятия «Авторемонтный центр Мингосимущества России» (ОГРН 1027739280470, ИНН 7722011854)."
       >
-        ---
+        <Header>Об учреждении</Header>
+        <Content>
+          {about.map(i => <Card key={i.label} {...i} />)}
+        </Content>
+        <Header>Сертификаты и лицензии</Header>
+        <Content>
+          {serf.map(i => <Card key={i.label} {...i} />)}
+        </Content>
+        <Header>Сводные ведомости</Header>
+        <Content>
+          {statements.map(i => <Card key={i.label} {...i} />)}
+        </Content>
+        <Header>Раскрытие информации</Header>
+        <Content>
+          {info.map(i => <Card key={i.label} {...i} />)}
+        </Content>
       </Page>
     </div>
   );

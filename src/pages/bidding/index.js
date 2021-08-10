@@ -2,8 +2,6 @@ import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
 import {Page, Card} from '../../components';
-import { maxDevice } from '../../theme';
-
 
 const Content = SC.div`
   margin: 45px 0;

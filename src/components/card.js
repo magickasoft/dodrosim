@@ -14,34 +14,37 @@ const Container = SC.div`
   border: 1px solid #DFE3F3;
   box-sizing: border-box;
   border-radius: 3px;
+  margin: 15px 20px;
+  overflow: hidden;
+  padding: 15px 10px 10px 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  margin: 15px 20px;
 `;
 
 const Label = SC.div`
-  white-space: pre-line;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
   line-height: 18px;
   color: #777777;
-  width: 100%;
-  height: 100%;
-  padding: 35px 10px 10px 10px;
+  // white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 `;
 
 const DownLoad = SC(Icon)`
-  margin: 15px 10px;
+  position: relative;
 `;
 
-export const Card = ({label, ...props}) => {
+export const Card = ({label, type, ...props}) => {
   return (
     <Link passHref {...props}>
       <Container>
-        <DownLoad name="download" size="18" color="#008E5B" />
+        <DownLoad name={type || 'download'} size="18" color="#008E5B" />
         <a>
           {label && (<Label>{label}</Label>)}
         </a>
