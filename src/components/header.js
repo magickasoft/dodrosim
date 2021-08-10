@@ -6,6 +6,7 @@ import {NavLink} from './navLink';
 import { maxDevice, minDevice } from '../theme';
 
 const Container = SC.header`
+  z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;

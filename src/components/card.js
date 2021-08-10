@@ -36,15 +36,11 @@ const Label = SC.div`
   -webkit-box-orient: vertical;
 `;
 
-const DownLoad = SC(Icon)`
-  position: relative;
-`;
-
 export const Card = ({label, type, ...props}) => {
   return (
     <Link passHref {...props}>
       <Container>
-        <DownLoad name={type || 'download'} size="18" color="#008E5B" />
+        <Icon name={type || 'download'} size="18" color="#008E5B" />
         <a>
           {label && (<Label>{label}</Label>)}
         </a>
