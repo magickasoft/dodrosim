@@ -166,7 +166,7 @@ export const Footer = () => (
           </Link>
         </Text>
         <Text>
-          <Link href="/contacts" passHref>
+          <Link href="/bidding" passHref>
             <a>Торги</a>
           </Link>
         </Text>
