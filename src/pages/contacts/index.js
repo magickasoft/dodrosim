@@ -1,7 +1,7 @@
 import Head from "next/head";
 import SC from 'styled-components';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import { maxDevice, minDevice } from '../../theme';
+import { GoogleMap, LoadScript, InfoWindow } from '@react-google-maps/api';
+import { maxDevice } from '../../theme';
 import React from 'react';
 
 const Container = SC.div`
@@ -12,6 +12,21 @@ const Container = SC.div`
   @media ${maxDevice.mobileL} {
     margin: 90px 30px 50px 30px;
   }
+`;
+const InfoHeader = SC.div`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 15px;
+`;
+const InfoText = SC.div`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000000;
 `;
 
 const Header = SC.div`
@@ -39,6 +54,9 @@ const Content = SC.div`
 
 const Block = SC.div`
   width: 600px;
+  @media ${maxDevice.mobileL} {
+    width: auto;
+  }
 `;
 
 const InfoContainer = SC.div`
@@ -66,6 +84,11 @@ const Info = ({ label, children }) => (
     {children}
   </InfoContainer>
 );
+
+const position = {
+  lat: 55.7507096,
+  lng: 37.7065385
+}
 
 export default function contacts() {
   return (
@@ -106,6 +129,25 @@ export default function contacts() {
             </Info>
           </Block>
         </Content>
+        <LoadScript
+          googleMapsApiKey="AIzaSyAVvL9VgqtHwNFsGFRbezgHulbiqv_TZdg"
+        >
+          <GoogleMap
+            mapContainerStyle={{
+              width: '100%',
+              height: '630px'
+            }}
+            center={position}
+            zoom={15}
+          >
+            <InfoWindow position={position}>
+              <div>
+                <InfoHeader>ФГБУ «ДОД Росимущества»</InfoHeader>
+                <InfoText>111024, Москва, проезд Завода Серп и Молот, д. 5, стр. 2</InfoText>
+              </div>
+            </InfoWindow>
+          </GoogleMap>
+        </LoadScript>
       </Container>
     </div>
   );
