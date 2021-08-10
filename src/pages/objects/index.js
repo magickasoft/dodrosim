@@ -11,6 +11,11 @@ const Content = SC.div`
   justify-content: center;
 `;
 
+const Iframe = SC.iframe`
+  border: none;
+  
+`;
+
 export default function objects() {
   return (
     <div className="wrapper">
@@ -27,7 +32,9 @@ export default function objects() {
         <meta name="description" content="Объекты" />
       </Head>
       <Content>
-        Объекты
+        <Iframe src="http://37.18.121.22:81/" width="100%" height="100%" align="left">
+          Ваш браузер не поддерживает плавающие фреймы!
+        </Iframe>
       </Content>
     </div>
   );
