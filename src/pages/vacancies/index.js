@@ -13,9 +13,6 @@ const items = [
   { label: 'Заместитель руководителя', category: 'Менеджмент', href: '/vacancies' },
   { label: 'Ведущий программист на Pyton', category: 'IT', href: '/vacancies' },
   { label: 'Заведующий отдела закупок', category: 'Менеджмент', href: '/vacancies' },
-  { label: 'Заместитель руководителя', category: 'Менеджмент', href: '/vacancies' },
-  { label: 'Ведущий программист на Pyton', category: 'IT', href: '/vacancies' },
-  { label: 'Заведующий отдела закупок', category: 'Менеджмент', href: '/vacancies' },
 ];
 
 export default function vacancies() {
