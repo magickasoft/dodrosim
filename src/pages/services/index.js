@@ -7,7 +7,7 @@ const Content = SC.div``;
 
 export default function services() {
   return (
-    <div className="wrapper">
+    <>
       <Head>
         <title>Услуги</title>
         <meta property="og:title" content="Услуги" />
@@ -23,6 +23,6 @@ export default function services() {
       <Page label="Услуги">
         ---
       </Page>
-    </div>
+    </>
   );
 }

@@ -8,7 +8,7 @@ const Content = SC.div``;
 
 export default function about() {
   return (
-    <div className="wrapper">
+    <>
       <Head>
         <title>Об учреждении</title>
         <meta property="og:title" content="Об учреждении" />
@@ -24,6 +24,6 @@ export default function about() {
       <Page label="Об учреждении">
         ---
       </Page>
-    </div>
+    </>
   );
 }

@@ -20,7 +20,7 @@ const items = [
 
 export default function bidding() {
   return (
-    <div className="wrapper">
+    <>
       <Head>
         <title>Торги</title>
         <meta property="og:title" content="Торги" />
@@ -41,6 +41,6 @@ export default function bidding() {
           {items.map(i => <Card key={i.label} {...i} />)}
         </Content>
       </Page>
-    </div>
+    </>
   );
 }

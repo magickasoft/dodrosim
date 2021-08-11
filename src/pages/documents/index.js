@@ -48,7 +48,7 @@ const info = [
 
 export default function documents() {
   return (
-    <div className="wrapper">
+    <>
       <Head>
         <title>Торги</title>
         <meta property="og:title" content="Документы" />
@@ -82,6 +82,6 @@ export default function documents() {
           {info.map(i => <Card key={i.label} {...i} />)}
         </Content>
       </Page>
-    </div>
+    </>
   );
 }

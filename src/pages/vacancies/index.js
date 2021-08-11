@@ -17,7 +17,7 @@ const items = [
 
 export default function vacancies() {
   return (
-    <div className="wrapper">
+    <>
       <Head>
         <title>Вакансии</title>
         <meta property="og:title" content="Вакансии" />
@@ -38,6 +38,6 @@ export default function vacancies() {
           {items.map(i => <VacancyCard key={i.label} {...i} />)}
         </Content>
       </Page>
-    </div>
+    </>
   );
 }

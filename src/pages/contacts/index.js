@@ -71,7 +71,7 @@ const position = {
 
 export default function contacts() {
   return (
-    <div className="wrapper">
+    <>
       <Head>
         <title>Контакты</title>
         <meta property="og:title" content="Контакты" />
@@ -127,6 +127,6 @@ export default function contacts() {
           </GoogleMap>
         </LoadScript>
       </Page>
-    </div>
+    </>
   );
 }

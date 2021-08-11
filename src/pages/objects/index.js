@@ -18,7 +18,7 @@ const Iframe = SC.iframe`
 
 export default function objects() {
   return (
-    <div className="wrapper">
+    <>
       <Head>
         <title>Объекты</title>
         <meta property="og:title" content="Объекты" />
@@ -36,6 +36,6 @@ export default function objects() {
           Ваш браузер не поддерживает плавающие фреймы!
         </Iframe>
       </Content>
-    </div>
+    </>
   );
 }
