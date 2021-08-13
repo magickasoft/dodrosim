@@ -1,10 +1,14 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
-import {Page} from '../../components';
+import { Page, SelfCard } from '../../components';
 import { maxDevice } from '../../theme';
 
-const Content = SC.div``;
+const Content = SC.div`
+  margin: 45px 0;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Header = SC.div`
   margin: 25px 0;
@@ -23,6 +27,15 @@ const Text = SC.div`
   line-height: 20px;
   color: #777777;
 `;
+
+const persons = [
+  { name: 'Дзиковский Андрей Сергеевич', position: 'Директор'},
+  { name: 'Сазонов Илья Викторович', position: 'Заместитель директора'},
+  { name: 'Гераськин Александр Викторович', position: 'Заместитель директора'},
+  { name: 'Ионочкин Алексей Иванович', position: 'Заместитель директора'},
+  { name: 'Калмыков Евгений Александрович', position: 'Советник директора'},
+  { name: 'Жуковская Елена Дмитриевна', position: 'Главный бухгалтер, начальник управления'},
+];
 
 export default function about() {
   return (
@@ -54,6 +67,9 @@ export default function about() {
           Основными задачами и функциями учреждения являются: эксплуатация и обслуживание федерального недвижимого имущества, используемого для нужд Росимущества  и его территориальных органов, развитие технической базы Росимущества,  а также материального и технического обеспечения его деятельности.
         </Text>
         <Header>Руководство</Header>
+        <Content>
+          {persons.map(i => <SelfCard key={i.name} {...i} />)}
+        </Content>
         <Header>Сведения об организации</Header>
         <Header>Противодействие коррупции</Header>
         Вы можете направить сообщение о фактах коррупционных действий по электронной почте на адрес: <a href='mailto:corruption@dodrosim.ru'>corruption@dodrosim.ru</a>
