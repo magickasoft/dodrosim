@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
-import { Page, Row, SelfCard } from '../../components';
+import { Page, Row, SelfCard, Accordion } from '../../components';
 import { minDevice } from '../../theme';
 
 const Content = SC.div`
@@ -131,6 +131,21 @@ export default function about() {
         <Text>
           – в случае, если в обращении не указаны фамилия заявителя и почтовый либо электронный адрес для направления ответа, но в указанном обращении содержатся сведения о подготавливаемом, совершаемом или совершенном противоправном деянии, а также о лице, его подготавливающем, совершающем или совершившем, обращение направляется для рассмотрения в государственный орган в соответствии с его компетенцией, при этом письменный ответ на обращение не дается.
         </Text>
+        <Accordion title="What is MTR?">
+          Monthly Tracked Revenue is calculated across all apps. For each
+          app, MTR is the revenue in USD reported to Apphud during one
+          billing period before Apple cut. We count only real transactions,
+          sandbox purchases are not counted.
+        </Accordion>
+        <Accordion title="What if I go over MTR included to my plan?">
+          We don't stop collecting data. Once you’ve run out of MTR included
+          in your plan you will be charged our additional rate:
+          <ul>
+            <li>$7.99 per additional $1,000 MTR at Launch plan</li>
+            <li>$5.99 per additional $1,000 MTR at Grow plan</li>
+            <li>custom rate at Enterprise plan</li>
+          </ul>
+        </Accordion>
       </Page>
     </>
   );
