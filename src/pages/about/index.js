@@ -43,6 +43,10 @@ const About = SC.div`
   }
 `;
 
+const Years = SC.div`
+  margin: 40px 0 0 0;
+`;
+
 const persons = [
   { name: 'Дзиковский Андрей Сергеевич', position: 'Директор'},
   { name: 'Сазонов Илья Викторович', position: 'Заместитель директора'},
@@ -131,45 +135,47 @@ export default function about() {
         <Text>
           – в случае, если в обращении не указаны фамилия заявителя и почтовый либо электронный адрес для направления ответа, но в указанном обращении содержатся сведения о подготавливаемом, совершаемом или совершенном противоправном деянии, а также о лице, его подготавливающем, совершающем или совершившем, обращение направляется для рассмотрения в государственный орган в соответствии с его компетенцией, при этом письменный ответ на обращение не дается.
         </Text>
-        <Accordion title="За 2020 год">
-          Monthly Tracked Revenue is calculated across all apps. For each
-          app, MTR is the revenue in USD reported to Apphud during one
-          billing period before Apple cut. We count only real transactions,
-          sandbox purchases are not counted.
-        </Accordion>
-        <Accordion title="За 2019 год">
-          We don't stop collecting data. Once you’ve run out of MTR included
-          in your plan you will be charged our additional rate:
-          <ul>
-            <li>$7.99 per additional $1,000 MTR at Launch plan</li>
-            <li>$5.99 per additional $1,000 MTR at Grow plan</li>
-            <li>custom rate at Enterprise plan</li>
-          </ul>
-        </Accordion>
-        <Accordion title="За 2018 год">
-          Monthly Tracked Revenue is calculated across all apps. For each
-          app, MTR is the revenue in USD reported to Apphud during one
-          billing period before Apple cut. We count only real transactions,
-          sandbox purchases are not counted.
-        </Accordion>
-        <Accordion title="За 2017 год">
-          We don't stop collecting data. Once you’ve run out of MTR included
-          in your plan you will be charged our additional rate:
-          <ul>
-            <li>$7.99 per additional $1,000 MTR at Launch plan</li>
-            <li>$5.99 per additional $1,000 MTR at Grow plan</li>
-            <li>custom rate at Enterprise plan</li>
-          </ul>
-        </Accordion>
-        <Accordion title="За 2016 год">
-          We don't stop collecting data. Once you’ve run out of MTR included
-          in your plan you will be charged our additional rate:
-          <ul>
-            <li>$7.99 per additional $1,000 MTR at Launch plan</li>
-            <li>$5.99 per additional $1,000 MTR at Grow plan</li>
-            <li>custom rate at Enterprise plan</li>
-          </ul>
-        </Accordion>
+        <Years>
+          <Accordion title="За 2020 год">
+            Monthly Tracked Revenue is calculated across all apps. For each
+            app, MTR is the revenue in USD reported to Apphud during one
+            billing period before Apple cut. We count only real transactions,
+            sandbox purchases are not counted.
+          </Accordion>
+          <Accordion title="За 2019 год">
+            We don't stop collecting data. Once you’ve run out of MTR included
+            in your plan you will be charged our additional rate:
+            <ul>
+              <li>$7.99 per additional $1,000 MTR at Launch plan</li>
+              <li>$5.99 per additional $1,000 MTR at Grow plan</li>
+              <li>custom rate at Enterprise plan</li>
+            </ul>
+          </Accordion>
+          <Accordion title="За 2018 год">
+            Monthly Tracked Revenue is calculated across all apps. For each
+            app, MTR is the revenue in USD reported to Apphud during one
+            billing period before Apple cut. We count only real transactions,
+            sandbox purchases are not counted.
+          </Accordion>
+          <Accordion title="За 2017 год">
+            We don't stop collecting data. Once you’ve run out of MTR included
+            in your plan you will be charged our additional rate:
+            <ul>
+              <li>$7.99 per additional $1,000 MTR at Launch plan</li>
+              <li>$5.99 per additional $1,000 MTR at Grow plan</li>
+              <li>custom rate at Enterprise plan</li>
+            </ul>
+          </Accordion>
+          <Accordion title="За 2016 год">
+            We don't stop collecting data. Once you’ve run out of MTR included
+            in your plan you will be charged our additional rate:
+            <ul>
+              <li>$7.99 per additional $1,000 MTR at Launch plan</li>
+              <li>$5.99 per additional $1,000 MTR at Grow plan</li>
+              <li>custom rate at Enterprise plan</li>
+            </ul>
+          </Accordion>
+        </Years>
       </Page>
     </>
   );

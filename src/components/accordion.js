@@ -9,7 +9,7 @@ const Container = SC.div`
   border: 1px solid #DFE3F3;
   box-sizing: border-box;
   border-radius: 3px;
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 0 20px;
 `;
 
