@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
-import { Page, SelfCard } from '../../components';
-import { maxDevice } from '../../theme';
+import { Page, Row, SelfCard } from '../../components';
+import { minDevice } from '../../theme';
 
 const Content = SC.div`
   margin: 45px 0;
@@ -28,6 +28,21 @@ const Text = SC.div`
   color: #777777;
 `;
 
+const Divider = SC.div`
+  margin: 5px 0;
+  height: 1px;
+  width: 100%;
+  background: #777777;
+  opacity: 0.2;
+`;
+
+
+const About = SC.div`
+  @media ${minDevice.laptop} {
+    width: 80%;
+  }
+`;
+
 const persons = [
   { name: 'Дзиковский Андрей Сергеевич', position: 'Директор'},
   { name: 'Сазонов Илья Викторович', position: 'Заместитель директора'},
@@ -35,6 +50,26 @@ const persons = [
   { name: 'Ионочкин Алексей Иванович', position: 'Заместитель директора'},
   { name: 'Калмыков Евгений Александрович', position: 'Советник директора'},
   { name: 'Жуковская Елена Дмитриевна', position: 'Главный бухгалтер, начальник управления'},
+];
+
+const details = [
+  { name: 'Полное наименование', text: 'Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом»'},
+  { name: 'Сокращенное наименование', text: 'ФГБУ «ДОД Росимущества»'},
+  { name: 'Юридический адрес', text: '111024, г. Москва, проезд Завода Серп и Молот, д. 5, стр. 2'},
+  { name: 'Фактический адрес', text: '111024, г. Москва, проезд Завода Серп и Молот, д. 5, стр. 2'},
+  { name: 'Почтовый адрес', text: '111024, г. Москва, проезд Завода Серп и Молот, д. 5, стр. 2'},
+  { name: 'Телефон', text: '8 (495) 361-45-21'},
+  { name: 'Факс', text: '8 (495) 361-49-34'},
+  { name: 'ИНН', text: '7722467407'},
+  { name: 'КПП', text: '772201001'},
+  { name: 'Рассчетный счет', text: '03214643000000017300'},
+  { name: 'Бик', text: '004525988'},
+  { name: 'Банк', text: 'ГУ Банка России по ЦФО УФК по г. Москве г. Москва'},
+  { name: 'ОКПО', text: '33308434'},
+  { name: 'ОГРН', text: '1187746840423'},
+  { name: 'ОКВЭД', text: '68.32.2'},
+  { name: 'Директор', text: 'Дзиковский Андрей Сергеевич'},
+  { name: 'Главный бухгалтер', text: 'Жуковская Елена Дмитриевна'},
 ];
 
 export default function about() {
@@ -71,6 +106,14 @@ export default function about() {
           {persons.map(i => <SelfCard key={i.name} {...i} />)}
         </Content>
         <Header>Сведения об организации</Header>
+        <About>
+          {details.map((i, index, data) => (
+            <>
+              <Row key={i.name} {...i} />
+              {index + 1 !== data.length && <Divider />}
+            </>
+          ))}
+        </About>
         <Header>Противодействие коррупции</Header>
         Вы можете направить сообщение о фактах коррупционных действий по электронной почте на адрес: <a href='mailto:corruption@dodrosim.ru'>corruption@dodrosim.ru</a>
         <Text>
