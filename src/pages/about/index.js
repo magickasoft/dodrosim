@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
 import { Page, Row, SelfCard, Accordion, PersonRow } from '../../components';
@@ -153,10 +153,10 @@ export default function about() {
         <Header id="requisites">Сведения об организации</Header>
         <About>
           {details.map((i, index, data) => (
-            <>
-              <Row key={i.name} {...i} />
+            <Fragment key={i.name}>
+              <Row {...i} />
               {index + 1 !== data.length && <Divider />}
-            </>
+            </Fragment>
           ))}
         </About>
         <Header id="corruption">Противодействие коррупции</Header>
@@ -180,10 +180,10 @@ export default function about() {
           {data.map(d => (
             <Accordion key={d.title} title={d.title}>
               {(d.items || []).map((i, index, data) => (
-                <>
-                  <PersonRow key={i.name} {...i} />
-                  {index + 1 !== data.length && <Divider key={index + 1} />}
-                </>
+                <Fragment key={i.name}>
+                  <PersonRow {...i} />
+                  {index + 1 !== data.length && <Divider />}
+                </Fragment>
               ))}
             </Accordion>
           ))}

@@ -1,6 +1,7 @@
 import React from "react";
 import SC, {css} from 'styled-components';
 import Link from "next/link";
+import { useRouter } from 'next/router'
 import { minDevice } from '../theme';
 
 const Container = SC.div`
@@ -35,13 +36,16 @@ const Item = SC.a`
   `}
 `;
 
-export const AnchoredLayout = ({ ancors }) => ancors ? (
-  <Container>
-    {(ancors || []).map(i => (
-      <Link key={i.name} href={i.href} passHref>
-        <Item>{i.name}</Item>
-      </Link>
-    ))}
-  </Container>
-) : null;
+export const AnchoredLayout = ({ ancors }) => {
+  const router = useRouter();
+  return ancors ? (
+    <Container>
+      {(ancors || []).map(i => (
+        <Link key={i.name} href={i.href} passHref>
+          <Item key={i.name} active={router.asPath.endsWith(i.href)}>{i.name}</Item>
+        </Link>
+      ))}
+    </Container>
+  ) : null;
+}
 
