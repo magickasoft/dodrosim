@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
-import { Page, Row, SelfCard, Accordion } from '../../components';
+import { Page, Row, SelfCard, Accordion, PersonRow } from '../../components';
 import { minDevice } from '../../theme';
 
 const Content = SC.div`
@@ -76,6 +76,40 @@ const details = [
   { name: 'Главный бухгалтер', text: 'Жуковская Елена Дмитриевна'},
 ];
 
+const year2019 = [
+  { name: 'Дзиковский Андрей Сергеевич', position: 'Директор'},
+  { name: 'Сазонов Илья Викторович', position: 'Заместитель директора'},
+  { name: 'Ионочкин Алексей Иванович', position: 'Заместитель директора'},
+  { name: 'Гераськин Александр Викторович', position: 'Заместитель директора'},
+  { name: 'Скворцов Виталий Александрович', position: 'Заместитель директора'},
+  { name: 'Чебров Роман Андреевич', position: 'Начальник управления гармонизации сведений'},
+  { name: 'Середа Дмитрий Сергеевич', position: 'Советник директора'},
+  { name: 'Жуковская Елена Дмитриевна', position: 'Главный бухгалтер, начальник управления'},
+];
+
+const data = [
+  {
+    title: 'За 2020 год',
+    items: persons,
+  },
+  {
+    title: 'За 2019 год',
+    items: year2019,
+  },
+  {
+    title: 'За 2018 год',
+    items: year2019,
+  },
+  {
+    title: 'За 2017 год',
+    items: year2019,
+  },
+  {
+    title: 'За 2016 год',
+    items: year2019,
+  },
+];
+
 export default function about() {
   return (
     <>
@@ -136,36 +170,16 @@ export default function about() {
           – в случае, если в обращении не указаны фамилия заявителя и почтовый либо электронный адрес для направления ответа, но в указанном обращении содержатся сведения о подготавливаемом, совершаемом или совершенном противоправном деянии, а также о лице, его подготавливающем, совершающем или совершившем, обращение направляется для рассмотрения в государственный орган в соответствии с его компетенцией, при этом письменный ответ на обращение не дается.
         </Text>
         <Years>
-          <Accordion title="За 2020 год">
-            Monthly Tracked Revenue is calculated across all apps. For each
-            app, MTR is the revenue in USD reported to Apphud during one
-            billing period before Apple cut. We count only real transactions,
-            sandbox purchases are not counted.
-          </Accordion>
-          <Accordion title="За 2019 год">
-            Monthly Tracked Revenue is calculated across all apps. For each
-            app, MTR is the revenue in USD reported to Apphud during one
-            billing period before Apple cut. We count only real transactions,
-            sandbox purchases are not counted.
-          </Accordion>
-          <Accordion title="За 2018 год">
-            Monthly Tracked Revenue is calculated across all apps. For each
-            app, MTR is the revenue in USD reported to Apphud during one
-            billing period before Apple cut. We count only real transactions,
-            sandbox purchases are not counted.
-          </Accordion>
-          <Accordion title="За 2017 год">
-            Monthly Tracked Revenue is calculated across all apps. For each
-            app, MTR is the revenue in USD reported to Apphud during one
-            billing period before Apple cut. We count only real transactions,
-            sandbox purchases are not counted.
-          </Accordion>
-          <Accordion title="За 2016 год">
-            Monthly Tracked Revenue is calculated across all apps. For each
-            app, MTR is the revenue in USD reported to Apphud during one
-            billing period before Apple cut. We count only real transactions,
-            sandbox purchases are not counted.
-          </Accordion>
+          {data.map(d => (
+            <Accordion key={d.title} title={d.title}>
+              {(d.items || []).map((i, index, data) => (
+                <>
+                  <PersonRow key={i.name} {...i} />
+                  {index + 1 !== data.length && <Divider key={index + 1} />}
+                </>
+              ))}
+            </Accordion>
+          ))}
         </Years>
       </Page>
     </>
