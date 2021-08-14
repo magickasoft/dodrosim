@@ -15,13 +15,18 @@ const Container = SC.div`
 `;
 
 const Item = SC.a`
-  padding: 16px 0;
+  margin: 16px 0;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   color: #008E5B;
   &:hover {
     color: #333E66;
