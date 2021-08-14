@@ -29,7 +29,8 @@ const Position = SC.div`
   font-weight: normal;
   font-size: 15px;
   line-height: 20px;
-  color: #000000;
+  color: #777777;
+  opacity: 0.75;
   width: 50%;
   overflow: hidden;
   text-overflow: ellipsis;
