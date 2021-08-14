@@ -1,15 +1,19 @@
 import React from 'react';
 import SC from 'styled-components';
-import { maxDevice } from '../theme';
+import { maxDevice, minDevice } from '../theme';
 import { AnchoredLayout } from './anchoredLayout';
 
 const Container = SC.header`
+  display: flex;
   margin: 120px 140px 60px 140px;
   @media ${maxDevice.tablet} {
     margin: 120px 30px 60px 30px;
   }
   @media ${maxDevice.mobileL} {
     margin: 90px 30px 50px 30px;
+  }
+  @media ${maxDevice.laptopL} {
+    flex-direction: column;
   }
 `;
 
@@ -37,14 +41,34 @@ const Text = SC.div`
   color: #777777;
   max-width: 760px;
 `;
+const LeftSide = SC.div``;
+const Layout = SC.div`
+  @media ${minDevice.laptopL} {
+    display: none;
+  }
+`;
+
+const RightSide = SC.div`
+  margin: 0 0 0 40px;
+  @media ${maxDevice.laptopL} {
+    display: none;
+  }
+`;
 
 export const Page = ({label, text, children, ancors}) => {
   return (
     <Container>
-      {label && (<Header>{label}</Header>)}
-      <AnchoredLayout ancors={ancors} />
-      {text && (<Text>{text}</Text>)}
-      {children}
+      <LeftSide>
+        {label && (<Header>{label}</Header>)}
+        <Layout>
+          <AnchoredLayout ancors={ancors} />
+        </Layout>
+        {text && (<Text>{text}</Text>)}
+        {children}
+      </LeftSide>
+      <RightSide>
+        <AnchoredLayout ancors={ancors} />
+      </RightSide>
     </Container>
   );
 };

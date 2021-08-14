@@ -5,8 +5,6 @@ import { minDevice } from '../theme';
 
 const Container = SC.div`
   margin: 0 0 60px 0;
-  display: flex;
-  flex-direction: column;
   background: #F2F4FA;
   border-radius: 3px;
   padding: 30px;
