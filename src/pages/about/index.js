@@ -143,13 +143,10 @@ export default function about() {
             sandbox purchases are not counted.
           </Accordion>
           <Accordion title="За 2019 год">
-            We don't stop collecting data. Once you’ve run out of MTR included
-            in your plan you will be charged our additional rate:
-            <ul>
-              <li>$7.99 per additional $1,000 MTR at Launch plan</li>
-              <li>$5.99 per additional $1,000 MTR at Grow plan</li>
-              <li>custom rate at Enterprise plan</li>
-            </ul>
+            Monthly Tracked Revenue is calculated across all apps. For each
+            app, MTR is the revenue in USD reported to Apphud during one
+            billing period before Apple cut. We count only real transactions,
+            sandbox purchases are not counted.
           </Accordion>
           <Accordion title="За 2018 год">
             Monthly Tracked Revenue is calculated across all apps. For each
@@ -158,22 +155,16 @@ export default function about() {
             sandbox purchases are not counted.
           </Accordion>
           <Accordion title="За 2017 год">
-            We don't stop collecting data. Once you’ve run out of MTR included
-            in your plan you will be charged our additional rate:
-            <ul>
-              <li>$7.99 per additional $1,000 MTR at Launch plan</li>
-              <li>$5.99 per additional $1,000 MTR at Grow plan</li>
-              <li>custom rate at Enterprise plan</li>
-            </ul>
+            Monthly Tracked Revenue is calculated across all apps. For each
+            app, MTR is the revenue in USD reported to Apphud during one
+            billing period before Apple cut. We count only real transactions,
+            sandbox purchases are not counted.
           </Accordion>
           <Accordion title="За 2016 год">
-            We don't stop collecting data. Once you’ve run out of MTR included
-            in your plan you will be charged our additional rate:
-            <ul>
-              <li>$7.99 per additional $1,000 MTR at Launch plan</li>
-              <li>$5.99 per additional $1,000 MTR at Grow plan</li>
-              <li>custom rate at Enterprise plan</li>
-            </ul>
+            Monthly Tracked Revenue is calculated across all apps. For each
+            app, MTR is the revenue in USD reported to Apphud during one
+            billing period before Apple cut. We count only real transactions,
+            sandbox purchases are not counted.
           </Accordion>
         </Years>
       </Page>
