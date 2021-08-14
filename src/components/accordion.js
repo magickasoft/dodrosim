@@ -32,10 +32,11 @@ const Title = SC.div`
 const Header = SC.div`
   display: flex;
   align-items: center;
-  min-height: 60px;
+  min-height: 46px;
   overflow: hidden;
   justify-content: space-between;
   cursor: pointer;
+  margin: 7px 0 0 0;
 `;
 
 const Content = SC.div`
