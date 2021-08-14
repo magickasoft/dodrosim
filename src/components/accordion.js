@@ -32,7 +32,7 @@ const Title = SC.div`
 const Header = SC.div`
   display: flex;
   align-items: center;
-  min-height: 46px;
+  min-height: 51px;
   overflow: hidden;
   justify-content: space-between;
   cursor: pointer;
@@ -53,12 +53,14 @@ const contentAnimation = {
     transform: "translateY(-20px)",
     delay: 30,
     maxHeight: "0px",
+    display: 'none',
   },
   true: {
     maxHeight: "1000px",
     opacity: 1,
     transform: "translateY(0)",
     delay: 0,
+    display: 'block',
   }
 };
 
