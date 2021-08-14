@@ -36,9 +36,9 @@ const Item = SC.a`
   `}
 `;
 
-export const AnchoredLayout = ({ list }) => list ? (
+export const AnchoredLayout = ({ ancors }) => ancors ? (
   <Container>
-    {(list || []).map(i => (
+    {(ancors || []).map(i => (
       <Link key={i.name} href={i.href} passHref>
         <Item>{i.name}</Item>
       </Link>

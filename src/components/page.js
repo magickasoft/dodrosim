@@ -1,6 +1,7 @@
 import React from 'react';
 import SC from 'styled-components';
 import { maxDevice } from '../theme';
+import { AnchoredLayout } from './anchoredLayout';
 
 const Container = SC.header`
   margin: 120px 140px 60px 140px;
@@ -37,11 +38,12 @@ const Text = SC.div`
   max-width: 760px;
 `;
 
-export const Page = ({label, text, children}) => {
+export const Page = ({label, text, children, ancors}) => {
   return (
     <Container>
       {label && (<Header>{label}</Header>)}
       {text && (<Text>{text}</Text>)}
+      <AnchoredLayout ancors={ancors} />
       {children}
     </Container>
   );
