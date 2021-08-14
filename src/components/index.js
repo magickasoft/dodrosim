@@ -1,4 +1,5 @@
 export * from './accordion';
+export * from './anchoredLayout';
 export * from './card';
 export * from './footer';
 export * from './header';

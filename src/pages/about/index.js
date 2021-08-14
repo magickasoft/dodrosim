@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
-import { Page, Row, SelfCard, Accordion, PersonRow } from '../../components';
+import { Page, Row, SelfCard, Accordion, PersonRow, AnchoredLayout } from '../../components';
 import { minDevice } from '../../theme';
 
 const Content = SC.div`
@@ -126,6 +126,7 @@ export default function about() {
         <meta name="description" content="Об учреждении" />
       </Head>
       <Page label="Об учреждении">
+        <AnchoredLayout />
         <Header>Деятельность</Header>
         <Text>
           Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом» (ОГРН 1187746840423,  ИНН 7722467407), на основании распоряжения Правительства Российской Федерации от 24.01.2018 № 75-р было преобразовано из Федерального государственного унитарного предприятия «Авторемонтный центр Мингосимущества России» (ОГРН 1027739280470, ИНН 7722011854).
