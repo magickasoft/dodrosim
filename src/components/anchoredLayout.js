@@ -4,6 +4,7 @@ import Link from "next/link";
 import { minDevice } from '../theme';
 
 const Container = SC.div`
+  margin: 16px 0;
   display: flex;
   flex-direction: column;
   background: #F2F4FA;

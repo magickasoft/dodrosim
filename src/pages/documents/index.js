@@ -46,6 +46,13 @@ const info = [
   { label: 'Документы об учреждении Государственное задание ФГБУ «ДОД Росимущества» на 2019 год', href: '/vacancies', type: 'document' },
 ];
 
+const ancors = [
+  {name: 'Об учреждении', href: '#about'},
+  {name: 'Сертификаты и лицензии', href: '#certificates'},
+  {name: 'Сводные ведомости', href: '#summary'},
+  {name: 'Раскрытие информации', href: '#disclosure'}
+];
+
 export default function documents() {
   return (
     <>
@@ -62,22 +69,23 @@ export default function documents() {
         <meta name="description" content="Документы" />
       </Head>
       <Page
+        ancors={ancors}
         label="Документы"
         text=" Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом» (ОГРН 1187746840423,  ИНН 7722467407), на основании распоряжения Правительства Российской Федерации от 24.01.2018 № 75-р было преобразовано из Федерального государственного унитарного предприятия «Авторемонтный центр Мингосимущества России» (ОГРН 1027739280470, ИНН 7722011854)."
       >
-        <Header>Об учреждении</Header>
+        <Header id="about">Об учреждении</Header>
         <Content>
           {about.map(i => <Card key={i.label} {...i} />)}
         </Content>
-        <Header>Сертификаты и лицензии</Header>
+        <Header id="certificates">Сертификаты и лицензии</Header>
         <Content>
           {serf.map(i => <Card key={i.label} {...i} />)}
         </Content>
-        <Header>Сводные ведомости</Header>
+        <Header id="summary">Сводные ведомости</Header>
         <Content>
           {statements.map(i => <Card key={i.label} {...i} />)}
         </Content>
-        <Header>Раскрытие информации</Header>
+        <Header id="disclosure">Раскрытие информации</Header>
         <Content>
           {info.map(i => <Card key={i.label} {...i} />)}
         </Content>

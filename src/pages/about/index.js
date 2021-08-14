@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
-import { Page, Row, SelfCard, Accordion, PersonRow, AnchoredLayout } from '../../components';
+import { Page, Row, SelfCard, Accordion, PersonRow } from '../../components';
 import { minDevice } from '../../theme';
 
 const Content = SC.div`

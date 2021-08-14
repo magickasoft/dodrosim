@@ -42,8 +42,8 @@ export const Page = ({label, text, children, ancors}) => {
   return (
     <Container>
       {label && (<Header>{label}</Header>)}
-      {text && (<Text>{text}</Text>)}
       <AnchoredLayout ancors={ancors} />
+      {text && (<Text>{text}</Text>)}
       {children}
     </Container>
   );
