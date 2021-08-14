@@ -4,6 +4,7 @@ export * from './card';
 export * from './footer';
 export * from './header';
 export * from './logo';
+export * from './newsCard';
 export * from './page';
 export * from './personRow';
 export * from './row';
