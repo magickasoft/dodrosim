@@ -57,7 +57,6 @@ const Row = SC.div`
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-}
   }
   @media ${maxDevice.mobileL} {
     margin-bottom: 30px;

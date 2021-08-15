@@ -2,10 +2,11 @@ import React  from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import SC from 'styled-components';
-import { Page } from '../../components';
+import { NewsCard, Page } from '../../components';
+import { maxDevice, minDevice } from '../../theme';
 
 const Content = SC.div`
-  margin: 45px 0;
+  margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -19,9 +20,83 @@ const Header = SC.div`
   color: #000000;
 `;
 
+const Label = SC.div`
+  white-space: pre-line;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+`;
+
+const SmallLabel = SC.div`
+  white-space: pre-line;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #777777;
+`;
+
+const Row = SC.div`
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  @media ${minDevice.tablet} {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media ${maxDevice.mobileL} {
+    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+`;
+
+const Other = SC.div`
+  margin: 60px 0 0 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+`;
+
+const Text = SC.div`
+  margin: 12px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #777777;
+`;
+
+const ImageContent = SC.div`
+  width: 100%;
+  min-width: 100%;
+  height: 400px;
+  min-height: 40px;
+  background-repeat: no-repeat;
+  background-position: center; 
+  border-radius: 3px;
+`;
+
+const items = [
+  { label: 'О правилах профилактики коронавирусной инфекции', date: '24 декабря 2021', href: '/news/1', url: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg' },
+  { label: 'Росимущество и ФАС России обсудили проблемные вопросы применения Закона № 44-ФЗ', date: '9 ноября 2021', href: '/news/32', url: 'https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=6&m=1093110112&s=612x612&w=0&h=uBH7Rj-Ew_ixjunRrD_U7alq2ZUPJ_5XgMpe9xO52QQ=' },
+  { label: 'Склады и офисы: основные тренды на рынке коммерческой недвижимости', date: '9 августа 2021', href: '/news/342', url: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg' },
+  { label: 'Росимущество работает над созданием суперсервиса «Имущество онлайн»', date: '21 июля 2021', href: '/news/123123', url: 'https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=6&m=1093110112&s=612x612&w=0&h=uBH7Rj-Ew_ixjunRrD_U7alq2ZUPJ_5XgMpe9xO52QQ=' },
+];
+
 export default function News() {
   const router = useRouter();
   const { id } = router.query;
+  const current = items[1];
   return (
     <>
       <Head>
@@ -36,8 +111,22 @@ export default function News() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Новости" />
       </Head>
-      <Page label="Новости">
-        IIDDDD {id}
+      <Page>
+        <Row>
+          <SmallLabel>{current.date}</SmallLabel>
+          <Label>{current.label}</Label>
+        </Row>
+        <ImageContent style={{ backgroundImage: `url(${current.url})` }} />
+        <Text>
+          Цены на жилье в 2018 году росли практически во всех крупных городах России. Однако спрогнозировать ситуацию на локальных рынках недвижимости в 2019 году пока сложно.
+        </Text>
+        <Text>
+          Аналитики региональных агентств недвижимости и компаний, входящих в Российскую гильдию риэлторов (РГР), подготовили отчет (.ppt) о ценах и тенденциях на локальных рынках.
+        </Text>
+        <Other>Другие новости</Other>
+        <Content>
+          {items.map(i => <NewsCard key={i.label} {...i} />)}
+        </Content>
       </Page>
     </>
   );
