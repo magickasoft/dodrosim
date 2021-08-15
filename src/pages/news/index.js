@@ -19,10 +19,10 @@ const Header = SC.div`
 `;
 
 const items = [
-  { label: 'О правилах профилактики коронавирусной инфекции', date: '24 декабря 2021', href: '/news', url: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg' },
-  { label: 'Росимущество и ФАС России обсудили проблемные вопросы применения Закона № 44-ФЗ', date: '9 ноября 2021', href: '/news', url: 'https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=6&m=1093110112&s=612x612&w=0&h=uBH7Rj-Ew_ixjunRrD_U7alq2ZUPJ_5XgMpe9xO52QQ=' },
-  { label: 'Склады и офисы: основные тренды на рынке коммерческой недвижимости', date: '9 августа 2021', href: '/news', url: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg' },
-  { label: 'Росимущество работает над созданием суперсервиса «Имущество онлайн»', date: '21 июля 2021', href: '/news', url: 'https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=6&m=1093110112&s=612x612&w=0&h=uBH7Rj-Ew_ixjunRrD_U7alq2ZUPJ_5XgMpe9xO52QQ=' },
+  { label: 'О правилах профилактики коронавирусной инфекции', date: '24 декабря 2021', href: '/news/1', url: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg' },
+  { label: 'Росимущество и ФАС России обсудили проблемные вопросы применения Закона № 44-ФЗ', date: '9 ноября 2021', href: '/news/32', url: 'https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=6&m=1093110112&s=612x612&w=0&h=uBH7Rj-Ew_ixjunRrD_U7alq2ZUPJ_5XgMpe9xO52QQ=' },
+  { label: 'Склады и офисы: основные тренды на рынке коммерческой недвижимости', date: '9 августа 2021', href: '/news/342', url: 'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg' },
+  { label: 'Росимущество работает над созданием суперсервиса «Имущество онлайн»', date: '21 июля 2021', href: '/news/123123', url: 'https://media.istockphoto.com/photos/picturesque-morning-in-plitvice-national-park-colorful-spring-scene-picture-id1093110112?k=6&m=1093110112&s=612x612&w=0&h=uBH7Rj-Ew_ixjunRrD_U7alq2ZUPJ_5XgMpe9xO52QQ=' },
 ];
 
 const data = [
