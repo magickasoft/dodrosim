@@ -1,17 +1,8 @@
 import SC from 'styled-components';
 import Link from 'next/link';
 import {Icon} from '../components/icon';
+import {Page} from '../components';
 import { maxDevice } from '../theme';
-
-const Container = SC.div`
-  margin: 120px 140px 60px 140px;
-  @media ${maxDevice.tablet} {
-    margin: 120px 30px 60px 30px;
-  }
-  @media ${maxDevice.mobileL} {
-    margin: 90px 30px 50px 30px;
-  }
-`;
 
 const Header = SC.div`
   white-space: pre-line;
@@ -67,7 +58,7 @@ const ULink = SC.a`
 
 export default function NotFoundPage() {
   return (
-    <Container>
+    <Page>
       <div>
         <Header>{`Этой страницы \nне существует`}</Header>
         <Text>
@@ -78,6 +69,6 @@ export default function NotFoundPage() {
       <Img>
         <NotFound name="notFound" size="260" />
       </Img>
-    </Container>
+    </Page>
   );
 }
