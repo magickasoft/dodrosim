@@ -2,6 +2,7 @@ import React from 'react';
 import SC from 'styled-components';
 import { maxDevice, minDevice } from '../theme';
 import { AnchoredLayout } from './anchoredLayout';
+import { Footer } from "./footer";
 
 const Container = SC.header`
   display: flex;
@@ -57,20 +58,23 @@ const RightSide = SC.div`
   }
 `;
 
-export const Page = ({label, text, children, ancors}) => {
+export const Page = ({label, text, children, ancors, withFooter = true}) => {
   return (
-    <Container>
-      <LeftSide>
-        {label && (<Header>{label}</Header>)}
-        <Layout>
+    <>
+      <Container>
+        <LeftSide>
+          {label && (<Header>{label}</Header>)}
+          <Layout>
+            <AnchoredLayout ancors={ancors} />
+          </Layout>
+          {text && (<Text>{text}</Text>)}
+          {children}
+        </LeftSide>
+        <RightSide>
           <AnchoredLayout ancors={ancors} />
-        </Layout>
-        {text && (<Text>{text}</Text>)}
-        {children}
-      </LeftSide>
-      <RightSide>
-        <AnchoredLayout ancors={ancors} />
-      </RightSide>
-    </Container>
+        </RightSide>
+      </Container>
+      {withFooter && <Footer />}
+    </>
   );
 };

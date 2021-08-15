@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import { Page } from '../components';
 
 export default function Home() {
   return (
@@ -16,9 +17,7 @@ export default function Home() {
         <meta name="description" content="app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        App
-      </main>
+      <Page withFooter={false} label="APP" />
     </>
   )
 }
