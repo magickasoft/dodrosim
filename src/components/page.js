@@ -41,7 +41,9 @@ const Text = SC.div`
   color: #777777;
   max-width: 760px;
 `;
-const LeftSide = SC.div``;
+const LeftSide = SC.div`
+  width: 100%;
+`;
 const Layout = SC.div`
   @media ${minDevice.laptopL} {
     display: none;
