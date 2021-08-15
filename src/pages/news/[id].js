@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React  from 'react';
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import SC from 'styled-components';
-import { Page, NewsCard } from '../../components';
+import { Page } from '../../components';
 
 const Content = SC.div`
   margin: 45px 0;

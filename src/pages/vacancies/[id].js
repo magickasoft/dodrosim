@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from "next/head";
+import { useRouter } from 'next/router';
 import SC from 'styled-components';
-import { Page, VacancyCard } from '../../components';
+import { Page } from '../../components';
 
 const Content = SC.div`
   margin: 45px 0;
@@ -9,13 +10,9 @@ const Content = SC.div`
   flex-wrap: wrap;
 `;
 
-const items = [
-  { label: 'Заместитель руководителя', category: 'Менеджмент', href: '/vacancies/1' },
-  { label: 'Ведущий программист на Pyton', category: 'IT', href: '/vacancies/34' },
-  { label: 'Заведующий отдела закупок', category: 'Менеджмент', href: '/vacancies/345' },
-];
-
-export default function vacancies() {
+export default function Vacancies() {
+  const router = useRouter();
+  const { id } = router.query;
   return (
     <>
       <Head>
@@ -34,9 +31,7 @@ export default function vacancies() {
         label="Вакансии"
         text="Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом» (ОГРН 1187746840423,  ИНН 7722467407), на основании распоряжения Правительства Российской Федерации от 24.01.2018 № 75-р было преобразовано из Федерального государственного унитарного предприятия «Авторемонтный центр Мингосимущества России» (ОГРН 1027739280470, ИНН 7722011854)."
       >
-        <Content>
-          {items.map(i => <VacancyCard key={i.label} {...i} />)}
-        </Content>
+        IIDDDD {id}
       </Page>
     </>
   );
