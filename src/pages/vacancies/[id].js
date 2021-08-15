@@ -2,13 +2,105 @@ import React from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import SC from 'styled-components';
-import { Page } from '../../components';
+import { Page, VacancyCard } from '../../components';
+import { maxDevice, minDevice } from '../../theme';
 
 const Content = SC.div`
-  margin: 45px 0;
+  margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
 `;
+
+const Header = SC.div`
+  margin: 25px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+`;
+
+const Text = SC.div`
+  margin: 12px 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #777777;
+`;
+
+const Label = SC.div`
+  white-space: pre-line;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+`;
+
+const SmallLabel = SC.div`
+  white-space: pre-line;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #777777;
+`;
+
+const Row = SC.div`
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  @media ${minDevice.tablet} {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+  }
+  @media ${maxDevice.mobileL} {
+    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+`;
+
+const Other = SC.div`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+`;
+
+const Button = SC.button`
+  background: #008E5B;
+  border-radius: 5px;
+  height: 60px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+  padding: 25px;
+`;
+
+const Btn = SC(Button)`
+  margin: 40px 0;
+`;
+
+const items = [
+  { label: 'Заместитель руководителя', category: 'Менеджмент', href: '/vacancies/1' },
+  { label: 'Ведущий программист на Pyton', category: 'IT', href: '/vacancies/34' },
+  { label: 'Заведующий отдела закупок', category: 'Менеджмент', href: '/vacancies/345' },
+];
 
 export default function Vacancies() {
   const router = useRouter();
@@ -27,8 +119,69 @@ export default function Vacancies() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Вакансии" />
       </Head>
-      <Page label="Заместитель руководителя">
-        IIDDDD {id}
+      <Page>
+        <Row>
+          <SmallLabel>Менеджмент</SmallLabel>
+          <Label>Заместитель руководителя</Label>
+        </Row>
+        <Header>Обязанности</Header>
+        <Text>
+          — Контроль эффективной работы склада;
+        </Text>
+        <Text>
+          — Организация соблюдения стандартов складских и логистических операций;
+        </Text>
+        <Text>
+          — Выполнение плановых показателей;
+        </Text>
+        <Text>
+          — Работа с документами;
+        </Text>
+        <Text>
+          — Руководство и обучение персонала;
+        </Text>
+        <Text>
+          — Помощь руководителю склада.
+        </Text>
+        <Header>Требования</Header>
+        <Text>
+          — Уверенный пользователь ПК (1С Склад, Word, Excel);
+        </Text>
+        <Text>
+          — Работа в команде на результат;
+        </Text>
+        <Text>
+          — Готовность к интенсивной физической работе;
+        </Text>
+        <Text>
+          — Опыт в управлении.
+        </Text>
+        <Header>Условия</Header>
+        <Text>
+          — Оформление по ТК РФ;
+        </Text>
+        <Text>
+          — Стабильная белая заработная плата;
+        </Text>
+        <Text>
+          — График работы 5-2-4-3, есть дневные и вечерние графики
+        </Text>
+        <Text>
+          — Место работы подбираем ближайшее к дому;
+        </Text>
+        <Text>
+          — Склады находятся по всей Москве и МО;
+        </Text>
+        <Text>
+          — Рост и развитие внутри компании.
+        </Text>
+        <Btn>
+          откликнуться на вакансию
+        </Btn>
+        <Other>Другие вакансии</Other>
+        <Content>
+          {items.map(i => <VacancyCard key={i.label} {...i} />)}
+        </Content>
       </Page>
     </>
   );
