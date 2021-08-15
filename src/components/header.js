@@ -1,6 +1,7 @@
 import React from 'react';
 import SC from 'styled-components';
 import { Rotate } from 'hamburger-react';
+import { useRouter } from 'next/router'
 import {HeaderLogo} from './logo';
 import {NavLink} from './navLink';
 import { maxDevice, minDevice } from '../theme';
@@ -69,11 +70,12 @@ const menu = [
 ];
 
 export const Header = () => {
+  const router = useRouter();
   const [isOpen, setOpen] = React.useState(false);
 
   const items = React.useMemo(() => {
-    return menu.map(i => <NavLink key={i.name} {...i} onClick={() => setOpen(!isOpen)} />);
-  }, [isOpen]);
+    return menu.map(i => <NavLink key={i.name} {...i} active={router.route.endsWith(i.href)} onClick={() => setOpen(!isOpen)} />);
+  }, [isOpen, router]);
 
   return (
     <Container>

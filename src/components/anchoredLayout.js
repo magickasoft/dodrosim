@@ -1,7 +1,7 @@
 import React from "react";
 import SC, {css} from 'styled-components';
 import Link from "next/link";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { minDevice } from '../theme';
 
 const Container = SC.div`
