@@ -17,7 +17,9 @@ export default function Home() {
         <meta name="description" content="app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page withFooter={false} label="APP" />
+      <Page withFooter={false} >
+        asda d
+      </Page>
     </>
   )
 }

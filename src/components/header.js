@@ -19,8 +19,15 @@ const Container = SC.header`
 const Line1 = SC.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 60px;
+  margin: 0 140px 0 140px;
+  @media ${maxDevice.tablet} {
+    margin: 0 30px 0 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    margin: 0 30px 0 30px;
+  }
 `;
 
 const Line2 = SC.div`
@@ -30,7 +37,7 @@ const Line2 = SC.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media ${minDevice.tablet} {
+  @media (min-width: 870px) {
     display: none;
   }
   @media ${maxDevice.mobileL} {
@@ -39,13 +46,13 @@ const Line2 = SC.div`
 `;
 
 const List = SC.div`
-  @media ${maxDevice.tablet} {
+  @media (max-width: 870px) {
     display: none;
   }
 `;
 
 const Menu = SC.div`
-  @media ${minDevice.tablet} {
+  @media (min-width: 870px) {
     display: none;
   }
 `;

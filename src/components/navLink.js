@@ -1,7 +1,6 @@
 import React from 'react';
 import SC, { css } from 'styled-components';
 import Link from "next/link";
-import { minDevice } from '../theme';
 
 const Item = SC.a`
   position: relative;
@@ -18,7 +17,7 @@ const Item = SC.a`
   &:hover {
     color: #333E66;
   }
-  @media ${minDevice.tablet} {
+  @media (min-width: 870px) {
     ${({ active }) => active  && css`
       color: #333E66;
       &:after {
