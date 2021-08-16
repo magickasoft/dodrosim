@@ -3,6 +3,7 @@ export * from './anchoredLayout';
 export * from './card';
 export * from './footer';
 export * from './header';
+export * from './landingItem';
 export * from './logo';
 export * from './newsCard';
 export * from './page';

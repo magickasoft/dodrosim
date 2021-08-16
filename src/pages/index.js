@@ -1,7 +1,87 @@
+import React, { useRef, useEffect } from 'react';
+import Rellax from 'rellax';
 import Head from 'next/head';
-import { Page } from '../components';
+import SC from 'styled-components';
+import { Footer, LandingItem } from '../components';
+import { maxDevice, minDevice } from '../theme';
+
+const Section = SC.section`
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  padding: 120px 140px 60px 140px;
+  @media ${maxDevice.tablet} {
+    align-items: flex-start;
+    padding: 120px 30px 60px 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    align-items: flex-start;
+    padding: 90px 30px 50px 30px;
+  }
+`;
+
+const Content = SC.div`
+  @media ${minDevice.tablet} {
+    width: 560px;
+  }
+`;
+
+const Text = SC.div`
+  margin: 30px 0 0 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  color: #777777;
+  @media ${maxDevice.mobileL} {
+    font-size: 16px;
+    line-height: 20px;
+  }
+`;
+
+const Label = SC.div`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 48px;
+  color: #333E66;
+  @media ${maxDevice.mobileL} {
+    font-size: 30px;
+    line-height: 36px;
+  }
+`;
+
+const Elements = SC.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 export default function Home() {
+  const rellaxRef = useRef();
+
+  useEffect(() => {
+    new Rellax(".animate", { // <---- Via class name
+      speed: -10,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+
+    new Rellax(rellaxRef.current, { // <---- Via useRef element
+      speed: -10,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -17,9 +97,82 @@ export default function Home() {
         <meta name="description" content="app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page withFooter={false} >
-        asda d
-      </Page>
+      <div>
+        <Section>
+          <Content data-scroll>
+            <Label>Имущество 360°</Label>
+            <Text>
+              Дирекция по обеспечению деятельности «Росимущества» осуществляет полный спектр работ по администрированию, управлению и обслуживанию федерального имущества.
+            </Text>
+            <Elements>
+              <LandingItem hint="более" label="20 лет" text="успешной работы" />
+              <LandingItem hint="более" label="400" text="сотрудников" />
+            </Elements>
+          </Content>
+        </Section>
+        <Section>
+          <Content data-scroll>
+            <Label>Администрирование имущества</Label>
+            <Text>
+              Полный цикл администрирования недвижимого имущества: поиск объектов, регистраиция прав, обслуживание и вовлечение в хозяйственный оборот.
+            </Text>
+            <Elements>
+              <LandingItem hint="более" label="350 тыс м2" text="коммерческой недвижимости" />
+              <LandingItem hint="более" label="14 тыс м2" text="жилой недвижимости" />
+              <LandingItem hint="более" label="250" text="объектов в управлении" />
+              <LandingItem hint="более" label="100" text="арендаторов" />
+            </Elements>
+          </Content>
+        </Section>
+        <Section>
+          <Content data-scroll>
+            <Label>Цифровизация</Label>
+            <Text>
+              ИТ-разработка и консалтинг. Дирекция обеспечения деятельности является оператором цифровой трансформации «Росимущества». Мы занимаемся разработкой програмного обеспечения, ИТ-Консалтингом, разработкой систем верификации реестров и автоматизацией бизнес-процессов работы с недвижимостью.
+            </Text>
+          </Content>
+        </Section>
+        <Section>
+          <Content v>
+            <Label>Мониторинг</Label>
+            <Text>
+              Организация мероприятий по мониторингу федерального имущества на предмет эффективности, качества и законности использования: камеральные работы, выездные мероприятия, контроль устранения замечаний.
+            </Text>
+            <Elements>
+              <LandingItem hint="более" label="2 500" text="проверок" />
+              <LandingItem hint="более" label="400" text="выявленных нарушений" />
+            </Elements>
+          </Content>
+        </Section>
+        <Section>
+          <Content data-scroll>
+            <Label>Управление автопарком</Label>
+            <Text>
+              Полный цикл услуг по управлению автомобильным парком Росимущества: формирование автомобильного парка, обслуживание автопарка (СТО), размещение автопарка (гараж).
+            </Text>
+            <Elements>
+              <LandingItem hint="более" label="100" text="машин в автопарке" />
+              <LandingItem hint="более" label="10" text="моделей" />
+              <LandingItem hint="более" label="150" text="водителей" />
+              <LandingItem hint="подача машин" label="24/7" />
+            </Elements>
+          </Content>
+        </Section>
+        <Section>
+          <Content data-scroll>
+            <Label>Другие услуги</Label>
+            <Text>
+              Дирекция по обеспечению деятельности, также осуществляет ряд дополнительных услуг, в том числе:
+            </Text>
+            <Elements>
+              <LandingItem face="primary" label="Геодезия и картография" text="Полный набор услуг для проведения инженерно-геодезических изысканий." />
+              <LandingItem face="primary" label="Кадастровые работы" text="Полный набор кадастровых работ, в том числе: постановка, внесение изменений, снятие с кадастрового учета; обмерные работы, подготовка актов обследования и др." />
+              <LandingItem face="primary" label="Ведение архива" text="Осуществляем услуги ведения архива Росимущества (хранение, отцифровка, обработка, уничтожение документов и проч)." />
+            </Elements>
+          </Content>
+        </Section>
+      </div>
+      <Footer />
     </>
   )
 }
