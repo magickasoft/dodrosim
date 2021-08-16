@@ -14,7 +14,7 @@ const Divider = SC.div`
   width: 1px;
   height: 36px;
   margin: 0 15px;
-  @media (max-width: 1040px) {
+  @media (max-width: 1055px) {
     display: none;
   }
 `;
@@ -28,7 +28,7 @@ const Label = SC.div`
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #777777;
-  @media (max-width: 1040px) {
+  @media (max-width: 1055px) {
     display: none;
   }
 `;

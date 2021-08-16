@@ -7,29 +7,26 @@ import Link from 'next/link';
 
 const Container = SC.footer`
   background: #F2F4FA;
-  padding: 38px 0;
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 38px 140px 38px 140px;
   @media ${maxDevice.tablet} {
+    padding: 38px 30px 38px 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    padding: 38px 30px 38px 30px;
+  }
+  @media (max-width: 720px) {
     flex-direction: column;
-    align-items: center;
   }
 `;
 
-const Contacts = SC.div`
-  margin: 0px 20px 0px 20px;
-  @media (min-width: 490px) {
-    width: 443px;
-  }
-`;
+const Contacts = SC.div``;
 
 const Links = SC.div`
   display: flex;
   flex-direction: row;
-  @media ${minDevice.tablet} AND ${maxDevice.laptop} {
-    flex-direction: column;
-  }
   @media ${maxDevice.mobileS} {
     flex-direction: column;
     align-self: flex-start;
@@ -48,10 +45,7 @@ const Copyright = SC.div`
 const Content = SC.div`
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  @media ${minDevice.tablet} AND ${maxDevice.laptop} {
-    flex-direction: column;
-  }
+  // justify-content: space-between;
   @media ${maxDevice.mobileL} {
     flex-direction: column;
   }
@@ -96,7 +90,7 @@ const Info = ({ label, children }) => (
 );
 
 const InfoBigContainer = SC.div`
-  margin: 17px 20px 34px 20px;
+  margin: 17px 0 34px ;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
