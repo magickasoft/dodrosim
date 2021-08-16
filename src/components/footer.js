@@ -2,7 +2,7 @@ import React from 'react';
 import SC from 'styled-components';
 import {Logo} from './logo';
 
-import { maxDevice, minDevice } from '../theme';
+import { maxDevice } from '../theme';
 import Link from 'next/link';
 
 const Container = SC.footer`
@@ -45,7 +45,6 @@ const Copyright = SC.div`
 const Content = SC.div`
   display: flex;
   align-items: flex-start;
-  // justify-content: space-between;
   @media ${maxDevice.mobileL} {
     flex-direction: column;
   }
