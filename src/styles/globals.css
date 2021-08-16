@@ -16,12 +16,21 @@ a {
 }
 
 
+/*[data-scroll] {*/
+/*    transition: transform 1.5s;*/
+/*}*/
+/*[data-scroll="in"] {*/
+/*    transform: translateY(0);*/
+/*}*/
+/*[data-scroll="out"] {*/
+/*    transform: translateY(200px);*/
+/*}*/
 [data-scroll] {
-    transition: transform 1.5s;
+    transition: opacity 1s;
 }
 [data-scroll="in"] {
-    transform: translateY(0);
+    opacity: 1;
 }
 [data-scroll="out"] {
-    transform: translateY(200px);
+    opacity: 0;
 }

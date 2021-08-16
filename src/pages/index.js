@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Rellax from 'rellax';
 import Head from 'next/head';
+import Image from 'next/image';
 import SC from 'styled-components';
 import { Footer, LandingItem } from '../components';
 import { maxDevice, minDevice } from '../theme';
@@ -59,6 +60,25 @@ const Elements = SC.div`
   flex-wrap: wrap;
 `;
 
+const Map = SC.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -150vh;
+  width: 300vh;
+  margin-top: -150vh;
+  z-index: -1;
+`;
+
+const Layer = SC.div`
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: linear-gradient(72.44deg, #F2F4FA 0%, rgba(242, 244, 250, 0) 100%);
+`;
+
 export default function Home() {
   const rellaxRef = useRef();
 
@@ -98,6 +118,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
+        <Map>
+          <Image
+            src="/map.svg"
+            width={5000}
+            height={5000}
+          />
+          <Layer />
+        </Map>
         <Section>
           <Content data-scroll>
             <Label>Имущество 360°</Label>
@@ -133,7 +161,7 @@ export default function Home() {
           </Content>
         </Section>
         <Section>
-          <Content v>
+          <Content data-scroll>
             <Label>Мониторинг</Label>
             <Text>
               Организация мероприятий по мониторингу федерального имущества на предмет эффективности, качества и законности использования: камеральные работы, выездные мероприятия, контроль устранения замечаний.
