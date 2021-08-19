@@ -6,6 +6,7 @@ import { close } from './close';
 import { document } from './document';
 import { download } from './download';
 import { logo } from './logo';
+import { objects } from './objects';
 
 export default {
   notFound,
@@ -16,4 +17,5 @@ export default {
   document,
   download,
   logo,
+  objects,
 };

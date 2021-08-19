@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import SC from 'styled-components';
 import { Footer, LandingItem, PromoNewsCard } from '../components';
+import {Icon} from '../components/icon';
 import { maxDevice, minDevice } from '../theme';
 
 const Section = SC.section`
@@ -35,7 +36,7 @@ const Text = SC.div`
   font-weight: normal;
   font-size: 20px;
   line-height: 28px;
-  color: #777777;
+  color: ${({ color }) => color || '#777777'};
   @media ${maxDevice.mobileL} {
     font-size: 16px;
     line-height: 20px;
@@ -47,7 +48,7 @@ const Label = SC.div`
   font-weight: normal;
   font-size: 40px;
   line-height: 48px;
-  color: #333E66;
+  color: ${({ color }) => color || '#333E66'};
   @media ${maxDevice.mobileL} {
     font-size: 30px;
     line-height: 36px;
@@ -80,7 +81,7 @@ const Layer = SC.div`
 `;
 
 const PromoNews = SC.div`
-  background: #fff;
+  background: ${({ color }) => color || '#fff'};
   display: flex;
   flex-direction: column;
   padding: 60px 140px 60px 140px;
@@ -96,6 +97,23 @@ const PromoNews = SC.div`
   }
 `;
 
+const PromoBlock = SC.div`
+  background: ${({ color }) => color || '#fff'};
+  display: flex;
+  flex-direction: column;
+  padding: 60px 140px 60px 140px;
+  @media ${maxDevice.tablet} {
+    padding: 60px 30px 60px 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    padding: 60px 30px 60px 30px;
+  }
+  @media (min-width: 1200px) {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+`;
+
 const NewsHeader = SC.div`
   font-style: normal;
   font-weight: normal;
@@ -104,6 +122,36 @@ const NewsHeader = SC.div`
   color: #000000;
   text-align: left;
   padding: 0 10px 0 10px;
+`;
+
+const Button = SC.button`
+  background: #fff;
+  border-radius: 5px;
+  height: 60px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #008E5B;
+  border: none;
+  padding: 25px;
+`;
+
+const Btn = SC(Button)`
+  margin: 40px 0;
+`;
+
+const Objects = SC.div`
+  margin: 15px;
+  svg {
+    width: 100%;
+  }
+  @media (min-width: 1200px) {
+    width: 50%;
+  }
 `;
 
 export default function Home() {
@@ -227,6 +275,18 @@ export default function Home() {
           </Content>
         </Section>
       </div>
+      <PromoBlock color="#38B662">
+        <Objects>
+          <Icon name="objects" height="328"/>
+        </Objects>
+        <div data-scroll>
+          <Label color="#fff">Государственные объекты</Label>
+          <Text color="#ffffff60">Посмотреть на карте Государственные объекты недвижимости</Text>
+          <Btn>
+            Посмотреть объекты на карте
+          </Btn>
+        </div>
+      </PromoBlock>
       <PromoNews>
         <NewsHeader>Новости учреждения и рынка недвижимости</NewsHeader>
         <PromoNewsCard label="Росимущество и ФАС России обсудили проблемные вопросы применения Закона № 44-ФЗ" date="24 декабря 2020" href="/news/10"/>
