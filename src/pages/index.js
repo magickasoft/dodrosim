@@ -110,6 +110,7 @@ const PromoBlock = SC.div`
   }
   @media (min-width: 1200px) {
     flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
   }
 `;
