@@ -3,7 +3,7 @@ import Rellax from 'rellax';
 import Head from 'next/head';
 import Image from 'next/image';
 import SC from 'styled-components';
-import { Footer, LandingItem } from '../components';
+import { Footer, LandingItem, PromoNewsCard } from '../components';
 import { maxDevice, minDevice } from '../theme';
 
 const Section = SC.section`
@@ -77,6 +77,33 @@ const Layer = SC.div`
   top: 0%;
   bottom: 0%;
   background: linear-gradient(72.44deg, #F2F4FA 0%, rgba(242, 244, 250, 0) 100%);
+`;
+
+const PromoNews = SC.div`
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 140px 60px 140px;
+  @media ${maxDevice.tablet} {
+    padding: 60px 30px 60px 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    padding: 60px 30px 60px 30px;
+  }
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    align-items: center;
+  }
+`;
+
+const NewsHeader = SC.div`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+  text-align: left;
+  padding: 0 10px 0 10px;
 `;
 
 export default function Home() {
@@ -200,6 +227,12 @@ export default function Home() {
           </Content>
         </Section>
       </div>
+      <PromoNews>
+        <NewsHeader>Новости учреждения и рынка недвижимости</NewsHeader>
+        <PromoNewsCard label="Росимущество и ФАС России обсудили проблемные вопросы применения Закона № 44-ФЗ" date="24 декабря 2020" href="/news/10"/>
+        <PromoNewsCard label="Склады и офисы: основные тренды на рынке коммерческой недвижимости." date="24 декабря 2020" href="/news/10"/>
+        <PromoNewsCard label="Поглощение на рынке столичных офисов остается высоким даже без сделок с госкомпаниями – Knight Frank" date="22 апреля 2020" href="/news/10"/>
+      </PromoNews>
       <Footer />
     </>
   )

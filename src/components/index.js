@@ -8,6 +8,7 @@ export * from './logo';
 export * from './newsCard';
 export * from './page';
 export * from './personRow';
+export * from './promoNewsCard';
 export * from './row';
 export * from './selfCard';
 export * from './vacancyCard';
