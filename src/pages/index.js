@@ -229,6 +229,12 @@ export default function Home() {
     Events.scrollEvent.register('end', function(to, element) {
       console.log('end', arguments);
     });
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
   }, []);
 
   return (
