@@ -200,10 +200,21 @@ const Objects = SC.div`
   }
 `;
 
+const linkProps = {
+  activeClass: 'active',
+  hashSpy: true,
+  spy: true,
+  smooth: true,
+  duration: 500,
+  offset: 50,
+};
+
 export default function Home() {
   const rellaxRef = useRef();
 
   useEffect(() => {
+    const scrollContainer = document.getElementById('container');
+    const scrollSliderMenu = document.getElementById('slider-menu');
     new Rellax(".animate", { // <---- Via class name
       speed: -10,
       center: false,
@@ -223,12 +234,19 @@ export default function Home() {
     });
 
     Events.scrollEvent.register('begin', function(to, element) {
-      console.log('begin', arguments);
+      console.log('begin', to);
     });
 
     Events.scrollEvent.register('end', function(to, element) {
-      console.log('end', arguments);
+      console.log('end', to);
     });
+
+    scrollContainer.addEventListener('wheel', function(evt) {
+      console.log('wheel', evt);
+      // evt.preventDefault();
+      scrollSliderMenu.scrollLeft += (evt.deltaY / 2.5);
+    });
+
     scrollSpy.update();
 
     return () => {
@@ -252,7 +270,7 @@ export default function Home() {
         <meta name="description" content="app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container>
+      <Container id="container">
         <Map>
           <Image
             src="/map.svg"
@@ -347,21 +365,21 @@ export default function Home() {
           </Section>
         </Element>
       </Container>
-      <SliderMenu>
+      <SliderMenu id="slider-menu">
         <SliderItem>
-          <RSLink activeClass="active" to="administration" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Администрирование</RSLink>
+          <RSLink {...linkProps} to="administration" id="administration">Администрирование</RSLink>
         </SliderItem>
         <SliderItem>
-          <RSLink activeClass="active" to="digitalization" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Цифровизация</RSLink>
+          <RSLink {...linkProps} to="digitalization" id="digitalization">Цифровизация</RSLink>
         </SliderItem>
         <SliderItem>
-          <RSLink activeClass="active" to="monitoring" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Мониторинг</RSLink>
+          <RSLink {...linkProps} to="monitoring" id="monitoring">Мониторинг</RSLink>
         </SliderItem>
         <SliderItem>
-          <RSLink activeClass="active" to="fleet-management" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Управление автопарком</RSLink>
+          <RSLink {...linkProps} to="fleet-management" id="fleet-management">Управление автопарком</RSLink>
         </SliderItem>
         <SliderItem>
-          <RSLink activeClass="active" to="other-services" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Другие услуги</RSLink>
+          <RSLink {...linkProps} to="other-services" id="other-services">Другие услуги</RSLink>
         </SliderItem>
       </SliderMenu>
       <PromoBlock color="#38B662">
