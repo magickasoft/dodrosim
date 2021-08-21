@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import Rellax from 'rellax';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import Head from 'next/head';
 import Image from 'next/image';
 import SC from 'styled-components';
@@ -7,20 +8,64 @@ import { Footer, LandingItem, PromoNewsCard } from '../components';
 import {Icon} from '../components/icon';
 import { maxDevice, minDevice } from '../theme';
 
+const Container = SC.div`
+  overflow: hidden;
+`;
+
+const SliderMenu = SC.div`
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333E66;
+  height: 60px;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 0 115px 0 115px;
+  @media ${maxDevice.tablet} {
+    padding: 0 5px 0 5px;
+  }
+  @media ${maxDevice.mobileL} {
+    padding: 0 5px 0 5px;
+  }
+  @media (min-width: 1200px) {
+    justify-content: space-around;
+  }
+`;
+const SliderItem = SC.div`
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0px 25px;
+`;
+const RSLink = SC(Link)`
+  color: #FFFFFF;
+  opacity: 0.33;
+`;
+
 const Section = SC.section`
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
-  padding: 120px 140px 60px 140px;
+  padding: 120px 140px 90px 140px;
   @media ${maxDevice.tablet} {
     align-items: flex-start;
-    padding: 120px 30px 60px 30px;
+    padding: 120px 30px 90px 30px;
   }
   @media ${maxDevice.mobileL} {
     align-items: flex-start;
-    padding: 90px 30px 50px 30px;
+    padding: 90px 30px 90px 30px;
   }
 `;
 
@@ -176,6 +221,14 @@ export default function Home() {
       vertical: true,
       horizontal: false
     });
+
+    Events.scrollEvent.register('begin', function(to, element) {
+      console.log('begin', arguments);
+    });
+
+    Events.scrollEvent.register('end', function(to, element) {
+      console.log('end', arguments);
+    });
   }, []);
 
   return (
@@ -193,7 +246,7 @@ export default function Home() {
         <meta name="description" content="app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <Container>
         <Map>
           <Image
             src="/map.svg"
@@ -202,80 +255,109 @@ export default function Home() {
           />
           <Layer />
         </Map>
-        <Section>
-          <Content data-scroll>
-            <Label>Имущество 360°</Label>
-            <Text>
-              Дирекция по обеспечению деятельности «Росимущества» осуществляет полный спектр работ по администрированию, управлению и обслуживанию федерального имущества.
-            </Text>
-            <Elements>
-              <LandingItem hint="более" label="20 лет" text="успешной работы" />
-              <LandingItem hint="более" label="400" text="сотрудников" />
-            </Elements>
-          </Content>
-        </Section>
-        <Section>
-          <Content data-scroll>
-            <Label>Администрирование имущества</Label>
-            <Text>
-              Полный цикл администрирования недвижимого имущества: поиск объектов, регистраиция прав, обслуживание и вовлечение в хозяйственный оборот.
-            </Text>
-            <Elements>
-              <LandingItem hint="более" label="350 тыс м2" text="коммерческой недвижимости" />
-              <LandingItem hint="более" label="14 тыс м2" text="жилой недвижимости" />
-              <LandingItem hint="более" label="250" text="объектов в управлении" />
-              <LandingItem hint="более" label="100" text="арендаторов" />
-            </Elements>
-          </Content>
-        </Section>
-        <Section>
-          <Content data-scroll>
-            <Label>Цифровизация</Label>
-            <Text>
-              ИТ-разработка и консалтинг. Дирекция обеспечения деятельности является оператором цифровой трансформации «Росимущества». Мы занимаемся разработкой програмного обеспечения, ИТ-Консалтингом, разработкой систем верификации реестров и автоматизацией бизнес-процессов работы с недвижимостью.
-            </Text>
-          </Content>
-        </Section>
-        <Section>
-          <Content data-scroll>
-            <Label>Мониторинг</Label>
-            <Text>
-              Организация мероприятий по мониторингу федерального имущества на предмет эффективности, качества и законности использования: камеральные работы, выездные мероприятия, контроль устранения замечаний.
-            </Text>
-            <Elements>
-              <LandingItem hint="более" label="2 500" text="проверок" />
-              <LandingItem hint="более" label="400" text="выявленных нарушений" />
-            </Elements>
-          </Content>
-        </Section>
-        <Section>
-          <Content data-scroll>
-            <Label>Управление автопарком</Label>
-            <Text>
-              Полный цикл услуг по управлению автомобильным парком Росимущества: формирование автомобильного парка, обслуживание автопарка (СТО), размещение автопарка (гараж).
-            </Text>
-            <Elements>
-              <LandingItem hint="более" label="100" text="машин в автопарке" />
-              <LandingItem hint="более" label="10" text="моделей" />
-              <LandingItem hint="более" label="150" text="водителей" />
-              <LandingItem hint="подача машин" label="24/7" />
-            </Elements>
-          </Content>
-        </Section>
-        <Section>
-          <Content data-scroll>
-            <Label>Другие услуги</Label>
-            <Text>
-              Дирекция по обеспечению деятельности, также осуществляет ряд дополнительных услуг, в том числе:
-            </Text>
-            <Elements>
-              <LandingItem face="primary" label="Геодезия и картография" text="Полный набор услуг для проведения инженерно-геодезических изысканий." />
-              <LandingItem face="primary" label="Кадастровые работы" text="Полный набор кадастровых работ, в том числе: постановка, внесение изменений, снятие с кадастрового учета; обмерные работы, подготовка актов обследования и др." />
-              <LandingItem face="primary" label="Ведение архива" text="Осуществляем услуги ведения архива Росимущества (хранение, отцифровка, обработка, уничтожение документов и проч)." />
-            </Elements>
-          </Content>
-        </Section>
-      </div>
+        <Element name="property">
+          <Section>
+            <Content data-scroll>
+              <Label>Имущество 360°</Label>
+              <Text>
+                Дирекция по обеспечению деятельности «Росимущества» осуществляет полный спектр работ по администрированию, управлению и обслуживанию федерального имущества.
+              </Text>
+              <Elements>
+                <LandingItem hint="более" label="20 лет" text="успешной работы" />
+                <LandingItem hint="более" label="400" text="сотрудников" />
+              </Elements>
+            </Content>
+          </Section>
+        </Element>
+        <Element name="administration">
+          <Section>
+            <Content data-scroll>
+              <Label>Администрирование имущества</Label>
+              <Text>
+                Полный цикл администрирования недвижимого имущества: поиск объектов, регистраиция прав, обслуживание и вовлечение в хозяйственный оборот.
+              </Text>
+              <Elements>
+                <LandingItem hint="более" label="350 тыс м2" text="коммерческой недвижимости" />
+                <LandingItem hint="более" label="14 тыс м2" text="жилой недвижимости" />
+                <LandingItem hint="более" label="250" text="объектов в управлении" />
+                <LandingItem hint="более" label="100" text="арендаторов" />
+              </Elements>
+            </Content>
+          </Section>
+        </Element>
+        <Element name="digitalization">
+          <Section>
+            <Content data-scroll>
+              <Label>Цифровизация</Label>
+              <Text>
+                ИТ-разработка и консалтинг. Дирекция обеспечения деятельности является оператором цифровой трансформации «Росимущества». Мы занимаемся разработкой програмного обеспечения, ИТ-Консалтингом, разработкой систем верификации реестров и автоматизацией бизнес-процессов работы с недвижимостью.
+              </Text>
+            </Content>
+          </Section>
+        </Element>
+        <Element name="monitoring">
+          <Section>
+            <Content data-scroll>
+              <Label>Мониторинг</Label>
+              <Text>
+                Организация мероприятий по мониторингу федерального имущества на предмет эффективности, качества и законности использования: камеральные работы, выездные мероприятия, контроль устранения замечаний.
+              </Text>
+              <Elements>
+                <LandingItem hint="более" label="2 500" text="проверок" />
+                <LandingItem hint="более" label="400" text="выявленных нарушений" />
+              </Elements>
+            </Content>
+          </Section>
+        </Element>
+        <Element name="fleet-management">
+          <Section>
+            <Content data-scroll>
+              <Label>Управление автопарком</Label>
+              <Text>
+                Полный цикл услуг по управлению автомобильным парком Росимущества: формирование автомобильного парка, обслуживание автопарка (СТО), размещение автопарка (гараж).
+              </Text>
+              <Elements>
+                <LandingItem hint="более" label="100" text="машин в автопарке" />
+                <LandingItem hint="более" label="10" text="моделей" />
+                <LandingItem hint="более" label="150" text="водителей" />
+                <LandingItem hint="подача машин" label="24/7" />
+              </Elements>
+            </Content>
+          </Section>
+        </Element>
+        <Element name="other-services">
+          <Section>
+            <Content data-scroll>
+              <Label>Другие услуги</Label>
+              <Text>
+                Дирекция по обеспечению деятельности, также осуществляет ряд дополнительных услуг, в том числе:
+              </Text>
+              <Elements>
+                <LandingItem face="primary" label="Геодезия и картография" text="Полный набор услуг для проведения инженерно-геодезических изысканий." />
+                <LandingItem face="primary" label="Кадастровые работы" text="Полный набор кадастровых работ, в том числе: постановка, внесение изменений, снятие с кадастрового учета; обмерные работы, подготовка актов обследования и др." />
+                <LandingItem face="primary" label="Ведение архива" text="Осуществляем услуги ведения архива Росимущества (хранение, отцифровка, обработка, уничтожение документов и проч)." />
+              </Elements>
+            </Content>
+          </Section>
+        </Element>
+      </Container>
+      <SliderMenu>
+        <SliderItem>
+          <RSLink activeClass="active" to="administration" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Администрирование</RSLink>
+        </SliderItem>
+        <SliderItem>
+          <RSLink activeClass="active" to="digitalization" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Цифровизация</RSLink>
+        </SliderItem>
+        <SliderItem>
+          <RSLink activeClass="active" to="monitoring" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Мониторинг</RSLink>
+        </SliderItem>
+        <SliderItem>
+          <RSLink activeClass="active" to="fleet-management" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Управление автопарком</RSLink>
+        </SliderItem>
+        <SliderItem>
+          <RSLink activeClass="active" to="other-services" hashSpy={true} spy={true} smooth={true} duration={500} offset={50}>Другие услуги</RSLink>
+        </SliderItem>
+      </SliderMenu>
       <PromoBlock color="#38B662">
         <Objects>
           <Icon name="objects" height="328"/>
