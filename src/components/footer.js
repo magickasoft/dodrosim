@@ -6,7 +6,7 @@ import { maxDevice } from '../theme';
 import Link from 'next/link';
 
 const Container = SC.footer`
-  z-index: 10;
+  z-index: 9999;
   background: #F2F4FA;
   display: flex;
   align-items: flex-start;
