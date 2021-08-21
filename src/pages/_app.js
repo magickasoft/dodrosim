@@ -6,7 +6,11 @@ import { Header } from '../components';
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     ScrollOut({
-      threshold: 0.6
+      threshold: 0.6,
+      onShown: function(element, ctx, scrollingElement) {
+        // todo mave by map
+        console.log('onShown', element, ctx, scrollingElement);
+      },
     });
   }, []);
 

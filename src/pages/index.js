@@ -242,8 +242,6 @@ export default function Home() {
     });
 
     scrollContainer.addEventListener('wheel', function(evt) {
-      console.log('wheel', evt);
-      // evt.preventDefault();
       scrollSliderMenu.scrollLeft += (evt.deltaY / 2.5);
     });
 
