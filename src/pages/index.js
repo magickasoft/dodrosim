@@ -108,24 +108,54 @@ const Elements = SC.div`
 
 const Map = SC.div`
   position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -150vh;
-  width: 300vh;
-  margin-top: -150vh;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: rgb(244,242,250);
+  transform: scale(0.7,0.7);
+  transition: all 1s;
+  div {
+    position: initial !important;
+  }
+  img {
+    position: absolute !important;
+    top: -85% !important;
+    left: 22% !important;
+    margin: initial !important;
+    margin-left: -150vh !important;
+    width: 300vh !important;
+    height: initial !important;
+    max-width: initial !important;
+    max-height: initial !important;
+  }
+  img, svg {
+    vertical-align: middle !important;
+  }
+  @media (min-width: 768px) {
+    img {
+      top: -100% !important;
+      left: 50% !important;
+    }
+  }
 `;
 
 const Layer = SC.div`
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  background: linear-gradient(72.44deg, #F2F4FA 0%, rgba(242, 244, 250, 0) 100%);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: linear-gradient(180deg, rgba(244,242,250, 1) 10%, rgba(244,242,250,0.8) 45%, rgba(244,242,250,0) 80%);
+  @media (min-width: 768px) {
+    background-image: linear-gradient(70deg, rgba(244,242,250, 1) 10%, rgba(244,242,250,0.8) 45%, rgba(244,242,250,0) 80%);
+  }
 `;
 
 const PromoNews = SC.div`
+  z-index: 10;
   background: ${({ color }) => color || '#fff'};
   display: flex;
   flex-direction: column;
@@ -143,6 +173,7 @@ const PromoNews = SC.div`
 `;
 
 const PromoBlock = SC.div`
+  z-index: 10;
   background: ${({ color }) => color || '#fff'};
   display: flex;
   flex-direction: column;
@@ -269,17 +300,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container id="container">
-        <Map>
-          <Image
-            src="/map.svg"
-            width={5000}
-            height={5000}
-          />
-          <Layer />
+        <Map id="map">
+          <Image src="/map.svg" layout='fill' />
         </Map>
-        <Element name="property">
-          <Section>
-            <Content data-scroll>
+        <Layer />
+        <Section>
+          <Element name="property" data-scroll>
+            <Content>
               <Label>Имущество 360°</Label>
               <Text>
                 Дирекция по обеспечению деятельности «Росимущества» осуществляет полный спектр работ по администрированию, управлению и обслуживанию федерального имущества.
@@ -289,11 +316,11 @@ export default function Home() {
                 <LandingItem hint="более" label="400" text="сотрудников" />
               </Elements>
             </Content>
-          </Section>
-        </Element>
-        <Element name="administration">
-          <Section>
-            <Content data-scroll>
+          </Element>
+        </Section>
+        <Section>
+          <Element name="administration" data-scroll>
+            <Content>
               <Label>Администрирование имущества</Label>
               <Text>
                 Полный цикл администрирования недвижимого имущества: поиск объектов, регистраиция прав, обслуживание и вовлечение в хозяйственный оборот.
@@ -305,21 +332,21 @@ export default function Home() {
                 <LandingItem hint="более" label="100" text="арендаторов" />
               </Elements>
             </Content>
-          </Section>
-        </Element>
-        <Element name="digitalization">
-          <Section>
-            <Content data-scroll>
+          </Element>
+        </Section>
+        <Section>
+          <Element name="digitalization" data-scroll>
+            <Content>
               <Label>Цифровизация</Label>
               <Text>
                 ИТ-разработка и консалтинг. Дирекция обеспечения деятельности является оператором цифровой трансформации «Росимущества». Мы занимаемся разработкой програмного обеспечения, ИТ-Консалтингом, разработкой систем верификации реестров и автоматизацией бизнес-процессов работы с недвижимостью.
               </Text>
             </Content>
-          </Section>
-        </Element>
-        <Element name="monitoring">
-          <Section>
-            <Content data-scroll>
+          </Element>
+        </Section>
+        <Section>
+          <Element name="monitoring" data-scroll>
+            <Content>
               <Label>Мониторинг</Label>
               <Text>
                 Организация мероприятий по мониторингу федерального имущества на предмет эффективности, качества и законности использования: камеральные работы, выездные мероприятия, контроль устранения замечаний.
@@ -329,11 +356,11 @@ export default function Home() {
                 <LandingItem hint="более" label="400" text="выявленных нарушений" />
               </Elements>
             </Content>
-          </Section>
-        </Element>
-        <Element name="fleet-management">
-          <Section>
-            <Content data-scroll>
+          </Element>
+        </Section>
+        <Section>
+          <Element name="fleet-management" data-scroll>
+            <Content>
               <Label>Управление автопарком</Label>
               <Text>
                 Полный цикл услуг по управлению автомобильным парком Росимущества: формирование автомобильного парка, обслуживание автопарка (СТО), размещение автопарка (гараж).
@@ -345,11 +372,11 @@ export default function Home() {
                 <LandingItem hint="подача машин" label="24/7" />
               </Elements>
             </Content>
-          </Section>
-        </Element>
-        <Element name="other-services">
-          <Section>
-            <Content data-scroll>
+          </Element>
+        </Section>
+        <Section>
+          <Element name="other-services" data-scroll>
+            <Content>
               <Label>Другие услуги</Label>
               <Text>
                 Дирекция по обеспечению деятельности, также осуществляет ряд дополнительных услуг, в том числе:
@@ -360,8 +387,8 @@ export default function Home() {
                 <LandingItem face="primary" label="Ведение архива" text="Осуществляем услуги ведения архива Росимущества (хранение, отцифровка, обработка, уничтожение документов и проч)." />
               </Elements>
             </Content>
-          </Section>
-        </Element>
+          </Element>
+        </Section>
       </Container>
       <SliderMenu id="slider-menu">
         <SliderItem>
