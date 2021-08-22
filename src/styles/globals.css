@@ -28,4 +28,5 @@ a {
 
 .active {
     opacity: 1 !important;
+    background: #38B662;
 }

@@ -37,7 +37,10 @@ const SliderMenu = SC.div`
     justify-content: space-around;
   }
 `;
-const SliderItem = SC.div`
+
+const RSLink = SC(Link)`
+  color: #FFFFFF;
+  opacity: 0.33;
   cursor: pointer;
   font-style: normal;
   font-weight: bold;
@@ -45,11 +48,7 @@ const SliderItem = SC.div`
   line-height: 15px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0px 25px;
-`;
-const RSLink = SC(Link)`
-  color: #FFFFFF;
-  opacity: 0.33;
+  padding: 25px 25px;
 `;
 
 const Section = SC.section`
@@ -273,7 +272,7 @@ export default function Home() {
     });
 
     scrollContainer.addEventListener('wheel', function(evt) {
-      scrollSliderMenu.scrollLeft += (evt.deltaY / 2.5);
+      scrollSliderMenu.scrollLeft += (evt.deltaY / 3.5);
     });
 
     scrollSpy.update();
@@ -391,21 +390,11 @@ export default function Home() {
         </Element>
       </Container>
       <SliderMenu id="slider-menu">
-        <SliderItem>
-          <RSLink {...linkProps} to="administration" id="administration">Администрирование</RSLink>
-        </SliderItem>
-        <SliderItem>
-          <RSLink {...linkProps} to="digitalization" id="digitalization">Цифровизация</RSLink>
-        </SliderItem>
-        <SliderItem>
-          <RSLink {...linkProps} to="monitoring" id="monitoring">Мониторинг</RSLink>
-        </SliderItem>
-        <SliderItem>
-          <RSLink {...linkProps} to="fleet-management" id="fleet-management">Управление автопарком</RSLink>
-        </SliderItem>
-        <SliderItem>
-          <RSLink {...linkProps} to="other-services" id="other-services">Другие услуги</RSLink>
-        </SliderItem>
+        <RSLink {...linkProps} to="administration" id="administration">Администрирование</RSLink>
+        <RSLink {...linkProps} to="digitalization" id="digitalization">Цифровизация</RSLink>
+        <RSLink {...linkProps} to="monitoring" id="monitoring">Мониторинг</RSLink>
+        <RSLink {...linkProps} to="fleet-management" id="fleet-management">Управление автопарком</RSLink>
+        <RSLink {...linkProps} to="other-services" id="other-services">Другие услуги</RSLink>
       </SliderMenu>
       <PromoBlock color="#38B662">
         <Objects>
