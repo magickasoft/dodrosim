@@ -22,7 +22,7 @@ const InfoText = SC.div`
 `;
 
 const Content = SC.div`
-  margin: 40px 0;
+  margin: 0 0 40px 0;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
