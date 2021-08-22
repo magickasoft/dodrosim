@@ -1,12 +1,11 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
+import Grid from '@kiwicom/orbit-components/lib/utils/Grid';
 import { Page, VacancyCard } from '../../components';
 
 const Content = SC.div`
-  margin: 45px 0;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 60px 0 0 0;
 `;
 
 const items = [
@@ -16,6 +15,7 @@ const items = [
 ];
 
 export default function vacancies() {
+  const renderCard = i => <VacancyCard key={i.label} {...i} />;
   return (
     <>
       <Head>
@@ -36,7 +36,28 @@ export default function vacancies() {
         text="Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом» (ОГРН 1187746840423,  ИНН 7722467407), на основании распоряжения Правительства Российской Федерации от 24.01.2018 № 75-р было преобразовано из Федерального государственного унитарного предприятия «Авторемонтный центр Мингосимущества России» (ОГРН 1027739280470, ИНН 7722011854)."
       >
         <Content>
-          {items.map(i => <VacancyCard key={i.label} {...i} />)}
+          <Grid
+            className="grid"
+            as="div"
+            largeDesktop={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            desktop={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            largeMobile={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            maxWidth="1440px"
+            mediumMobile={{
+              columns: 'repeat(1, minmax(10px, 1fr))',
+              gap: '40px',
+            }}>
+            {items.map(renderCard)}
+          </Grid>
         </Content>
       </Page>
     </>

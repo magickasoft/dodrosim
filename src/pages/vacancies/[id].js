@@ -2,13 +2,12 @@ import React from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import SC from 'styled-components';
+import Grid from '@kiwicom/orbit-components/lib/utils/Grid';
 import { Page, VacancyCard } from '../../components';
 import { maxDevice, minDevice } from '../../theme';
 
 const Content = SC.div`
-  margin: 30px 0;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 30px 0 0 0;
 `;
 
 const Header = SC.div`
@@ -104,6 +103,7 @@ const items = [
 export default function Vacancies() {
   const router = useRouter();
   const { id } = router.query;
+  const renderCard = i => <VacancyCard key={i.label} {...i} />;
   return (
     <>
       <Head>
@@ -179,7 +179,28 @@ export default function Vacancies() {
         </Btn>
         <Other>Другие вакансии</Other>
         <Content>
-          {items.map(i => <VacancyCard key={i.label} {...i} />)}
+          <Grid
+            className="grid"
+            as="div"
+            largeDesktop={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            desktop={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            largeMobile={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            maxWidth="1440px"
+            mediumMobile={{
+              columns: 'repeat(1, minmax(10px, 1fr))',
+              gap: '40px',
+            }}>
+            {items.map(renderCard)}
+          </Grid>
         </Content>
       </Page>
     </>
