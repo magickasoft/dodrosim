@@ -304,8 +304,8 @@ export default function Home() {
           <Image src="/map.svg" layout='fill' />
         </Map>
         <Layer />
-        <Section>
-          <Element name="property" data-scroll>
+        <Element name="property" data-scroll>
+          <Section>
             <Content>
               <Label>Имущество 360°</Label>
               <Text>
@@ -316,10 +316,10 @@ export default function Home() {
                 <LandingItem hint="более" label="400" text="сотрудников" />
               </Elements>
             </Content>
-          </Element>
-        </Section>
-        <Section>
-          <Element name="administration" data-scroll>
+          </Section>
+        </Element>
+        <Element name="administration" data-scroll>
+          <Section>
             <Content>
               <Label>Администрирование имущества</Label>
               <Text>
@@ -332,20 +332,20 @@ export default function Home() {
                 <LandingItem hint="более" label="100" text="арендаторов" />
               </Elements>
             </Content>
-          </Element>
-        </Section>
-        <Section>
-          <Element name="digitalization" data-scroll>
+          </Section>
+        </Element>
+        <Element name="digitalization" data-scroll>
+          <Section>
             <Content>
               <Label>Цифровизация</Label>
               <Text>
                 ИТ-разработка и консалтинг. Дирекция обеспечения деятельности является оператором цифровой трансформации «Росимущества». Мы занимаемся разработкой програмного обеспечения, ИТ-Консалтингом, разработкой систем верификации реестров и автоматизацией бизнес-процессов работы с недвижимостью.
               </Text>
             </Content>
-          </Element>
-        </Section>
-        <Section>
-          <Element name="monitoring" data-scroll>
+          </Section>
+        </Element>
+        <Element name="monitoring" data-scroll>
+          <Section>
             <Content>
               <Label>Мониторинг</Label>
               <Text>
@@ -356,10 +356,10 @@ export default function Home() {
                 <LandingItem hint="более" label="400" text="выявленных нарушений" />
               </Elements>
             </Content>
-          </Element>
-        </Section>
-        <Section>
-          <Element name="fleet-management" data-scroll>
+          </Section>
+        </Element>
+        <Element name="fleet-management" data-scroll>
+          <Section>
             <Content>
               <Label>Управление автопарком</Label>
               <Text>
@@ -372,10 +372,10 @@ export default function Home() {
                 <LandingItem hint="подача машин" label="24/7" />
               </Elements>
             </Content>
-          </Element>
-        </Section>
-        <Section>
-          <Element name="other-services" data-scroll>
+          </Section>
+        </Element>
+        <Element name="other-services" data-scroll>
+          <Section>
             <Content>
               <Label>Другие услуги</Label>
               <Text>
@@ -387,8 +387,8 @@ export default function Home() {
                 <LandingItem face="primary" label="Ведение архива" text="Осуществляем услуги ведения архива Росимущества (хранение, отцифровка, обработка, уничтожение документов и проч)." />
               </Elements>
             </Content>
-          </Element>
-        </Section>
+          </Section>
+        </Element>
       </Container>
       <SliderMenu id="slider-menu">
         <SliderItem>
