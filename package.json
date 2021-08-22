@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@kiwicom/orbit-components": "^0.120.0",
     "@react-google-maps/api": "^2.2.0",
     "color": "^4.0.1",
     "hamburger-react": "^2.4.1",

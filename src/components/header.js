@@ -70,7 +70,7 @@ const Content = SC.div`
 `;
 
 const menu = [
-  { name: 'Услуги', href: '/services' },
+  { name: 'Услуги', href: '/' },
   { name: 'Объекты', href: '/objects' },
   { name: 'Об учреждении', href: '/about' },
   { name: 'Контакты', href: '/contacts' },
