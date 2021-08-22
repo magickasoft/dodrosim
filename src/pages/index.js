@@ -200,6 +200,7 @@ const NewsHeader = SC.div`
   color: #000000;
   text-align: left;
   padding: 0 10px 0 10px;
+  width: 260px;
 `;
 
 const Button = SC.button`
