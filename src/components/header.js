@@ -37,7 +37,7 @@ const Line2 = SC.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (min-width: 870px) {
+  @media (min-width: 1070px) {
     display: none;
   }
   @media ${maxDevice.mobileL} {
@@ -46,13 +46,13 @@ const Line2 = SC.div`
 `;
 
 const List = SC.div`
-  @media (max-width: 870px) {
+  @media (max-width: 1070px) {
     display: none;
   }
 `;
 
 const Menu = SC.div`
-  @media (min-width: 870px) {
+  @media (min-width: 1070px) {
     display: none;
   }
 `;
