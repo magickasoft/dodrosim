@@ -55,7 +55,6 @@ export default function vacancies() {
               columns: 'repeat(2, minmax(10px, 1fr))',
               gap: '40px',
             }}
-            maxWidth="1440px"
             mediumMobile={{
               columns: 'repeat(1, minmax(10px, 1fr))',
               gap: '40px',

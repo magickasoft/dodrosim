@@ -2,13 +2,12 @@ import React  from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import SC from 'styled-components';
+import Grid from '@kiwicom/orbit-components/lib/utils/Grid/index';
 import { NewsCard, Page } from '../../components';
 import { maxDevice, minDevice } from '../../theme';
 
 const Content = SC.div`
   margin: 30px 0;
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 const Label = SC.div`
@@ -97,6 +96,7 @@ export default function News() {
   const router = useRouter();
   const { id } = router.query;
   const current = items[1];
+  const renderCard = i => <NewsCard key={i.label} {...i} />;
   return (
     <>
       <Head>
@@ -125,7 +125,31 @@ export default function News() {
         </Text>
         <Other>Другие новости</Other>
         <Content>
-          {items.map(i => <NewsCard key={i.label} {...i} />)}
+          <Grid
+            className="grid"
+            as="div"
+            largeDesktop={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            desktop={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            tablet={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '30px',
+            }}
+            largeMobile={{
+              columns: 'repeat(1, minmax(10px, 1fr))',
+              gap: '30px',
+            }}
+            mediumMobile={{
+              columns: 'repeat(1, minmax(10px, 1fr))',
+              gap: '30px',
+            }}>
+            {items.map(renderCard)}
+          </Grid>
         </Content>
       </Page>
     </>

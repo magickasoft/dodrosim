@@ -118,7 +118,7 @@ export default function Vacancies() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Вакансии" />
       </Head>
-      <Page>
+      <Page withRight={false}>
         <Row>
           <SmallLabel>Менеджмент</SmallLabel>
           <Label>Заместитель руководителя</Label>
@@ -198,7 +198,6 @@ export default function Vacancies() {
               columns: 'repeat(2, minmax(10px, 1fr))',
               gap: '40px',
             }}
-            maxWidth="1440px"
             mediumMobile={{
               columns: 'repeat(1, minmax(10px, 1fr))',
               gap: '40px',

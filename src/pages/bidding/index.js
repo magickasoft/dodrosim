@@ -57,7 +57,6 @@ export default function bidding() {
               columns: 'repeat(3, minmax(10px, 1fr))',
               gap: '30px',
             }}
-            maxWidth="1440px"
             mediumMobile={{
               columns: 'repeat(2, minmax(10px, 1fr))',
               gap: '30px',
