@@ -18,7 +18,7 @@ const Container = SC.div`
   border: 1px solid #DFE3F3;
   box-sizing: border-box;
   border-radius: 3px;
-  margin: 15px 20px;
+  margin: 15px 20px 15px 0;
   overflow: hidden;
   padding: 15px 10px 10px 10px;
   @media ${maxDevice.mobileL} {
