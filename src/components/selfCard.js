@@ -9,7 +9,7 @@ const Container = SC.div`
   }
   width: 160px;
   min-width: 160px;
-  margin: 20px;
+  margin: 20px 20px 20px 0;
   overflow: hidden;
 `;
 

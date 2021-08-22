@@ -175,6 +175,7 @@ const PromoNews = SC.div`
 
 const PromoBlock = SC.div`
   z-index: 10;
+  overflow: hidden;
   background: ${({ color }) => color || '#fff'};
   display: flex;
   flex-direction: column;
@@ -184,6 +185,26 @@ const PromoBlock = SC.div`
   }
   @media ${maxDevice.mobileL} {
     padding: 60px 30px 60px 30px;
+  }
+  @media (min-width: 1200px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+const PromoBlock1 = SC.div`
+  z-index: 10;
+  overflow: hidden;
+  background: ${({ color }) => color || '#fff'};
+  display: flex;
+  flex-direction: column;
+  padding: 60px 140px 60px 140px;
+  @media ${maxDevice.tablet} {
+    padding: 0px 30px 60px 30px;
+  }
+  @media ${maxDevice.mobileL} {
+    padding: 0px 30px 60px 30px;
   }
   @media (min-width: 1200px) {
     flex-direction: row-reverse;
@@ -216,7 +237,7 @@ const Button = SC.button`
   text-transform: uppercase;
   color: #008E5B;
   border: none;
-  padding: 25px;
+  padding: 0 25px;
 `;
 
 const Btn = SC(Button)`
@@ -225,6 +246,10 @@ const Btn = SC(Button)`
 
 const Objects = SC.div`
   margin: 15px;
+  transform: scale(1.5);
+  @media ${maxDevice.mobileL} {
+    transform: scale(1.7);
+  }
   svg {
     width: 100%;
   }
@@ -399,7 +424,7 @@ export default function Home() {
         <RSLink {...linkProps} to="fleet-management" id="fleet-management">Управление автопарком</RSLink>
         <RSLink {...linkProps} to="other-services" id="other-services">Другие услуги</RSLink>
       </SliderMenu>
-      <PromoBlock color="#38B662">
+      <PromoBlock1 color="#38B662">
         <Objects>
           <Icon name="objects" height="328"/>
         </Objects>
@@ -410,7 +435,7 @@ export default function Home() {
             Посмотреть объекты на карте
           </Btn>
         </div>
-      </PromoBlock>
+      </PromoBlock1>
       <PromoNews>
         <NewsHeader>Новости учреждения и рынка недвижимости</NewsHeader>
         <PromoNewsCard label="Росимущество и ФАС России обсудили проблемные вопросы применения Закона № 44-ФЗ" date="24 декабря 2020" href="/news/10"/>
