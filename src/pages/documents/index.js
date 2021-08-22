@@ -4,13 +4,13 @@ import SC from 'styled-components';
 import {Page, Card} from '../../components';
 
 const Content = SC.div`
-  margin: 45px 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
 `;
 
 const Header = SC.div`
-  margin: 25px 0;
+  margin: 25px 0 45px 0;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
