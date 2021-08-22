@@ -78,8 +78,10 @@ const ImageContent = SC.div`
   width: 100%;
   min-width: 100%;
   height: 400px;
-  min-height: 40px;
+  min-height: 400px;
   background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-size: cover;
   background-position: center; 
   border-radius: 3px;
 `;
