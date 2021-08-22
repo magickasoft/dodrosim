@@ -47,6 +47,10 @@ export default function vacancies() {
               columns: 'repeat(3, minmax(10px, 1fr))',
               gap: '40px',
             }}
+            tablet={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
             largeMobile={{
               columns: 'repeat(2, minmax(10px, 1fr))',
               gap: '40px',

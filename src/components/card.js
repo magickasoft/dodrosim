@@ -7,14 +7,12 @@ const Container = SC.div`
   &:hover {
     cursor: pointer;
   }
-  width: 160px;
   min-width: 160px;
   height: 160px;
   background: #FFFFFF;
   border: 1px solid #DFE3F3;
   box-sizing: border-box;
   border-radius: 3px;
-  margin: 15px 20px 15px 0;
   overflow: hidden;
   padding: 15px 10px 10px 10px;
   display: flex;
@@ -39,12 +37,14 @@ const Label = SC.div`
 export const Card = ({label, type, ...props}) => {
   return (
     <Link passHref {...props}>
-      <Container>
-        <Icon name={type || 'download'} size="18" color="#008E5B" />
-        <a>
-          {label && (<Label>{label}</Label>)}
-        </a>
-      </Container>
+      <div>
+        <Container>
+          <Icon name={type || 'download'} size="18" color="#008E5B" />
+          <a>
+            {label && (<Label>{label}</Label>)}
+          </a>
+        </Container>
+      </div>
     </Link>
   );
 };

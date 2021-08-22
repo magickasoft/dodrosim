@@ -2,11 +2,10 @@ import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
 import {Page, Card} from '../../components';
+import Grid from '@kiwicom/orbit-components/lib/utils/Grid/index';
 
 const Content = SC.div`
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 const Header = SC.div`
@@ -53,6 +52,38 @@ const ancors = [
   {name: 'Раскрытие информации', href: '#disclosure'}
 ];
 
+const CustomGrid = ({items = []}) => {
+  const renderCard = i => <Card key={i.label} {...i} />;
+  return (
+    <Grid
+      className="grid"
+      as="div"
+      largeDesktop={{
+        columns: 'repeat(5, minmax(10px, 1fr))',
+        gap: '40px',
+      }}
+      desktop={{
+        columns: 'repeat(4, minmax(10px, 1fr))',
+        gap: '40px',
+      }}
+      tablet={{
+        columns: 'repeat(3, minmax(10px, 1fr))',
+        gap: '30px',
+      }}
+      largeMobile={{
+        columns: 'repeat(3, minmax(10px, 1fr))',
+        gap: '30px',
+      }}
+      maxWidth="1440px"
+      mediumMobile={{
+        columns: 'repeat(2, minmax(10px, 1fr))',
+        gap: '30px',
+      }}>
+      {items.map(renderCard)}
+    </Grid>
+  );
+}
+
 export default function documents() {
   return (
     <>
@@ -75,19 +106,19 @@ export default function documents() {
       >
         <Header id="about">Об учреждении</Header>
         <Content>
-          {about.map(i => <Card key={i.label} {...i} />)}
+          <CustomGrid items={about} />
         </Content>
         <Header id="certificates">Сертификаты и лицензии</Header>
         <Content>
-          {serf.map(i => <Card key={i.label} {...i} />)}
+          <CustomGrid items={serf} />
         </Content>
         <Header id="summary">Сводные ведомости</Header>
         <Content>
-          {statements.map(i => <Card key={i.label} {...i} />)}
+          <CustomGrid items={statements} />
         </Content>
         <Header id="disclosure">Раскрытие информации</Header>
         <Content>
-          {info.map(i => <Card key={i.label} {...i} />)}
+          <CustomGrid items={info} />
         </Content>
       </Page>
     </>

@@ -1,12 +1,11 @@
 import React from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
+import Grid from '@kiwicom/orbit-components/lib/utils/Grid';
 import {Page, Card} from '../../components';
 
 const Content = SC.div`
-  margin: 45px 0;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 40px 0 0 0;
 `;
 
 const items = [
@@ -39,7 +38,32 @@ export default function bidding() {
         text="Федеральное государственное бюджетное учреждение «Дирекция по обеспечению деятельности Федерального агентства по управлению государственным имуществом» (ОГРН 1187746840423,  ИНН 7722467407), на основании распоряжения Правительства Российской Федерации от 24.01.2018 № 75-р было преобразовано из Федерального государственного унитарного предприятия «Авторемонтный центр Мингосимущества России» (ОГРН 1027739280470, ИНН 7722011854)."
       >
         <Content>
-          {items.map(renderCard)}
+          <Grid
+            className="grid"
+            as="div"
+            largeDesktop={{
+              columns: 'repeat(5, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            desktop={{
+              columns: 'repeat(4, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            tablet={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '30px',
+            }}
+            largeMobile={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '30px',
+            }}
+            maxWidth="1440px"
+            mediumMobile={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '30px',
+            }}>
+            {items.map(renderCard)}
+          </Grid>
         </Content>
       </Page>
     </>

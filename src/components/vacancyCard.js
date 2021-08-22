@@ -8,7 +8,6 @@ const Container = SC.div`
   }
   padding: 15px 10px 10px 10px;
   display: flex;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 160px;
