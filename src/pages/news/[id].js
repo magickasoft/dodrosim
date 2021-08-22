@@ -83,6 +83,7 @@ const ImageContent = SC.div`
   background-size: cover;
   background-position: center; 
   border-radius: 3px;
+  margin: 0 0 40px 0;
 `;
 
 const items = [
