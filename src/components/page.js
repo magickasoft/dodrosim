@@ -52,7 +52,7 @@ const Layout = SC.div`
 `;
 
 const RightSide = SC.div`
-  margin: 0 0 0 40px;
+  margin: 0 0 0 400px;
   @media ${maxDevice.laptopL} {
     display: none;
   }

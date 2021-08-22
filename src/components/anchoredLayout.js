@@ -11,6 +11,8 @@ const Container = SC.div`
   padding: 30px;
   @media ${minDevice.laptopL} {
     width: 360px;
+    position: fixed;
+    right: 40px;
   }
 `;
 
