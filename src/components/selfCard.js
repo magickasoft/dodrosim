@@ -7,15 +7,13 @@ const Container = SC.div`
   &:hover {
     cursor: pointer;
   }
-  width: 160px;
   min-width: 160px;
-  margin: 20px 20px 20px 0;
   overflow: hidden;
 `;
 
 const Placeholder = SC.div`
-  width: 160px;
-  height: 160px;
+  min-height: 160px;
+  min-width: 160px;
   background: #F2F4FA;
   border-radius: 3px;
   display: flex;

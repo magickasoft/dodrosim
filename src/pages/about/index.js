@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
 import Head from "next/head";
 import SC from 'styled-components';
+import Grid from '@kiwicom/orbit-components/lib/utils/Grid';
 import { Page, Row, SelfCard, Accordion, PersonRow } from '../../components';
 import { minDevice } from '../../theme';
 
 const Content = SC.div`
   margin: 45px 0;
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 const Header = SC.div`
@@ -123,6 +122,7 @@ const ancors = [
 ];
 
 export default function about() {
+  const renderCard = i => <SelfCard key={i.name} {...i} />;
   return (
     <>
       <Head>
@@ -155,7 +155,31 @@ export default function about() {
         </Activity>
         <Header id="management">Руководство</Header>
         <Content>
-          {persons.map(i => <SelfCard key={i.name} {...i} />)}
+          <Grid
+            className="grid"
+            as="div"
+            largeDesktop={{
+              columns: 'repeat(4, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            desktop={{
+              columns: 'repeat(4, minmax(10px, 1fr))',
+              gap: '40px',
+            }}
+            tablet={{
+              columns: 'repeat(3, minmax(10px, 1fr))',
+              gap: '30px',
+            }}
+            largeMobile={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '30px',
+            }}
+            mediumMobile={{
+              columns: 'repeat(2, minmax(10px, 1fr))',
+              gap: '30px',
+            }}>
+            {persons.map(renderCard)}
+          </Grid>
         </Content>
         <Header id="requisites">Сведения об организации</Header>
         <About>
