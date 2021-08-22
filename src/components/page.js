@@ -58,7 +58,7 @@ const RightSide = SC.div`
   }
 `;
 
-export const Page = ({label, text, children, ancors, withFooter = true}) => {
+export const Page = ({label, text, children, ancors, withFooter = true, withRight = true}) => {
   return (
     <>
       <Container>
@@ -70,9 +70,11 @@ export const Page = ({label, text, children, ancors, withFooter = true}) => {
           {text && (<Text>{text}</Text>)}
           {children}
         </LeftSide>
-        <RightSide>
-          <AnchoredLayout ancors={ancors} />
-        </RightSide>
+        {withRight && (
+          <RightSide>
+            <AnchoredLayout ancors={ancors} />
+          </RightSide>
+        )}
       </Container>
       {withFooter && <Footer />}
     </>

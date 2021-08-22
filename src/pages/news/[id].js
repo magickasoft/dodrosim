@@ -11,16 +11,8 @@ const Content = SC.div`
   flex-wrap: wrap;
 `;
 
-const Header = SC.div`
-  margin: 25px 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 30px;
-  color: #000000;
-`;
-
 const Label = SC.div`
+  width: 66%;
   white-space: pre-line;
   font-style: normal;
   font-weight: normal;
@@ -28,6 +20,7 @@ const Label = SC.div`
 `;
 
 const SmallLabel = SC.div`
+  width: 33%;
   white-space: pre-line;
   font-style: normal;
   font-weight: bold;
@@ -35,6 +28,10 @@ const SmallLabel = SC.div`
   line-height: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  text-align: right;
+  @media ${maxDevice.tablet} {
+    text-align: left;
+  }
   color: #777777;
 `;
 
@@ -46,7 +43,7 @@ const Row = SC.div`
   flex-direction: column;
   @media ${minDevice.tablet} {
     flex-direction: row-reverse;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   }
   @media ${maxDevice.mobileL} {
@@ -68,6 +65,7 @@ const Other = SC.div`
 `;
 
 const Text = SC.div`
+  width: 66%;
   margin: 12px 0;
   font-style: normal;
   font-weight: normal;
@@ -111,7 +109,7 @@ export default function News() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Новости" />
       </Head>
-      <Page>
+      <Page withRight={false}>
         <Row>
           <SmallLabel>{current.date}</SmallLabel>
           <Label>{current.label}</Label>
