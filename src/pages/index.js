@@ -101,6 +101,18 @@ const Label = SC.div`
   }
 `;
 
+const Label1 = SC.div`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 72px;
+  color: ${({ color }) => color || '#333E66'};
+  @media ${maxDevice.mobileL} {
+    font-size: 40px;
+    line-height: 48px;
+  }
+`;
+
 const Elements = SC.div`
   width: 100%;
   display: flex;
@@ -334,7 +346,7 @@ export default function Home() {
         <Element name="property" data-scroll>
           <Section>
             <Content>
-              <Label>Имущество 360°</Label>
+              <Label1>Имущество 360°</Label1>
               <Text>
                 Дирекция по обеспечению деятельности «Росимущества» осуществляет полный спектр работ по администрированию, управлению и обслуживанию федерального имущества.
               </Text>
