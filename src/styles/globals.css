@@ -30,6 +30,6 @@ a:hover {
 }
 
 .active {
-    opacity: 1 !important;
+    color: #FFFFFF !important;
     background: #38B662;
 }

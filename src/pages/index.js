@@ -39,8 +39,7 @@ const SliderMenu = SC.div`
 `;
 
 const RSLink = SC(Link)`
-  color: #FFFFFF;
-  opacity: 0.33;
+  color: #FFFFFF33 !important;
   cursor: pointer;
   font-style: normal;
   font-weight: bold;
@@ -49,6 +48,9 @@ const RSLink = SC(Link)`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 25px 25px;
+  :hover {
+    color: #FFFFFF !important;
+  }
 `;
 
 const Section = SC.section`
