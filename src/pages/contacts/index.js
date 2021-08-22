@@ -84,7 +84,7 @@ export default function contacts() {
         <meta property="twitter:url" content="https://site.com/about" />
         <meta name="description" content="Контакты" />
       </Head>
-      <Page label="Контакты">
+      <Page label="Контактная информация">
         <Content>
           <Block>
             <Info label="Телефоны">
