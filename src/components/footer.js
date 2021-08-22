@@ -192,23 +192,23 @@ export const Footer = () => (
       </InfoBig>
       <InfoBig label="Сайты">
         <Text>
-          <Link href="/about" passHref>
-            <a>Росимущество</a>
+          <Link href="http://www.rosim.ru/" passHref>
+            <a target="_blank">Росимущество</a>
           </Link>
         </Text>
         <Text>
-          <Link href="/services" passHref>
-            <a>Реестр закупок</a>
+          <Link href="http://zakupki.gov.ru/epz/order/quicksearch/search.html?strictEqual=true&searchString=%D0%A4%D0%95%D0%94%D0%95%D0%A0%D0%90%D0%9B%D0%AC%D0%9D%D0%9E%D0%95+%D0%93%D0%9E%D0%A1%D0%A3%D0%94%D0%90%D0%A0%D0%A1%D0%A2%D0%92%D0%95%D0%9D%D0%9D%D0%9E%D0%95+%D0%A3%D0%9D%D0%98%D0%A2%D0%90%D0%A0%D0%9D%D0%9E%D0%95+%D0%9F%D0%A0%D0%95%D0%94%D0%9F%D0%A0%D0%98%D0%AF%D0%A2%D0%98%D0%95+%22%D0%90%D0%92%D0%A2%D0%9E%D0%A0%D0%95%D0%9C%D0%9E%D0%9D%D0%A2%D0%9D%D0%AB%D0%99+%D0%A6%D0%95%D0%9D%D0%A2%D0%A0+%D0%9C%D0%98%D0%9D%D0%93%D0%9E%D0%A1%D0%98%D0%9C%D0%A3%D0%A9%D0%95%D0%A1%D0%A2%D0%92%D0%90+%D0%A0%D0%9E%D0%A1%D0%A1%D0%98%D0%98%22" passHref>
+            <a target="_blank">Реестр закупок</a>
           </Link>
         </Text>
         <Text>
-          <Link href="/objects" passHref>
-            <a>Реестр торгов</a>
+          <Link href="http://esugi.rosim.ru/" passHref>
+            <a target="_blank">Реестр торгов</a>
           </Link>
         </Text>
         <Text>
-          <Link href="/contacts" passHref>
-            <a>Реестр Федерального имущества</a>
+          <Link href="http://esugi.rosim.ru/" passHref>
+            <a target="_blank">Реестр Федерального имущества</a>
           </Link>
         </Text>
       </InfoBig>
