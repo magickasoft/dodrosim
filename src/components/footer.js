@@ -35,7 +35,7 @@ const Links = SC.div`
 `;
 
 const Copyright = SC.div`
-  margin: 17px 0 34px 0;
+  margin: 17px 0 25px 0;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -90,7 +90,7 @@ const Info = ({ label, children }) => (
 );
 
 const InfoBigContainer = SC.div`
-  margin: 17px 0 34px ;
+  margin: 17px 0 25px 0;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;

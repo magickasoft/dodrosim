@@ -41,6 +41,7 @@ const Header = SC.div`
 
 const Content = SC.div`
   margin: 0 0 20px 0;
+  overflow: auto;
 `;
 
 const Arrow = SC.div`

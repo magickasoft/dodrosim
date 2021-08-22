@@ -17,11 +17,7 @@ const Name = SC.div`
   color: #777777;
   margin-right: 7px;
   width: 50%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  min-width: 150px;
 `;
 
 const Position = SC.div`
@@ -32,11 +28,7 @@ const Position = SC.div`
   color: #777777;
   opacity: 0.75;
   width: 50%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  min-width: 150px;
 `;
 
 const Document = SC.div`

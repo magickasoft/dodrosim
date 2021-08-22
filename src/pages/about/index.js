@@ -34,6 +34,7 @@ const Divider = SC.div`
   width: 100%;
   background: #777777;
   opacity: 0.2;
+  min-width: 300px;
 `;
 
 

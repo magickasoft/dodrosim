@@ -2,7 +2,7 @@ import React from 'react';
 import SC from 'styled-components';
 
 const Container = SC.div`
-  margin: 7px;
+  margin: 7px 0;
   display: flex;
   flex-direction: row;
   @media (max-width: 520px) {
